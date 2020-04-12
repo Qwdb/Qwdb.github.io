@@ -1,0 +1,406 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>啊哈添柴 12722. 差分入门 | 千文杜博的博客~</title>
+<meta name="description" content="并非所有流浪者，都迷失了自我！" />
+<link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
+<link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
+
+<script src="https://qwdb.github.io/media/js/jquery.min.js"></script>
+<script src="https://qwdb.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://qwdb.github.io/media/js/aos.js"></script>
+<script src="https://qwdb.github.io/media/js/pace.min.js"></script>
+<script src="https://qwdb.github.io/media/js/view-image.min.js"></script>
+<script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://qwdb.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="12722. 差分入门 题解
+题目链接
+序言：
+第一次写在添柴上的题的题解，嗯嗯呃呃....
+1. 入手程序
+这道题可以约等于一个裸题，就是一个基本的区间修改题目，连查询都不需要！
+但这道题的数据不小，不能直接一个数组直接进行该动，可以作为..." />
+    <meta name="keywords" content="" />
+    <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://qwdb.github.io"><img src="\media\images\custom-headerLogo.jpg" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://qwdb.github.io" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/posts" class="menu">
+                      文章
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1586662273133" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">16 分钟前</span></time>
+              
+              <a href="https://qwdb.github.io/post/12722/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/12722/"> </span>
+              </a>
+              <span id="/12722/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+              </div>
+              <h1 class="title ularge white bold">啊哈添柴 12722. 差分入门</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="12722-差分入门-题解">12722. 差分入门 题解</h2>
+<p><a href="https://www.acoj.com/problems/12722">题目链接</a></p>
+<p>序言：</p>
+<p>第一次写在添柴上的题的题解，嗯嗯呃呃....</p>
+<h3 id="1-入手程序">1. 入手程序</h3>
+<p>这道题可以约等于一个裸题，就是一个基本的区间修改题目，连查询都不需要！</p>
+<p>但这道题的数据不小，不能直接一个数组直接进行该动，可以作为差分的入门题~</p>
+<h3 id="2-编程思路">2. 编程思路</h3>
+<p>神马是差分呢？差分指的是每一次改动不直接影响结果，而是把改动存储在一个临时空间中。</p>
+<p>比如这一题，不把每次的改动直接放在答案数组a里，而是放在差分数组k里</p>
+<p>（然后这样再那样在布拉布拉。。。。）</p>
+<p>好吧，我承认老师讲的这一段真的很难懂</p>
+<p>那我来用样例说明一下</p>
+<p>开始时a数组为：1 5 7 3 6 9</p>
+<p>实际变化过程为：<br>
+1 5 7 3 6 9</p>
+<p>1 5 7 6 9 12</p>
+<p>1 6 8 7 10 12</p>
+<p>1 6 10 9 12 14</p>
+<p>k[i]初始化为a[1],k [i]初始化为a[i]-a[i-1]</p>
+<pre><code class="language-c">f[i]=a[i]-a[i-1];
+</code></pre>
+<p>结果为：1，4，2，-4，3，3</p>
+<p>第一个步骤：第四到第六位加3</p>
+<p>k对应操作：第四位+3，第七位-3（当然，本样例没有第七位）</p>
+<p>第二个步骤：第二到第五位加1</p>
+<p>k对应操作：第二位+1，第六位-3</p>
+<p>第三个步骤：第三到第六位加2</p>
+<p>k对应操作：第三位+2，第七位-2（同上）</p>
+<p>代码就是：</p>
+<pre><code class="language-c">f[A]+=C;
+if(B!=n)
+{
+	f[B+1]-=C;
+}
+</code></pre>
+<p>最后不要忘了k数组要逐位加到a数组上哦~</p>
+<ol>
+<li>AC代码</li>
+</ol>
+<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,m;
+int A,B,C;
+int a[100005],f[100005];
+int main()
+{
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;a[i];
+	}
+	for(int i=1;i&lt;=n;i++)
+	{
+		f[i]=a[i]-a[i-1];
+	}
+	cin&gt;&gt;m;
+	for(int i=1;i&lt;=m;i++)
+	{
+		cin&gt;&gt;A&gt;&gt;B&gt;&gt;C;
+		if(A&gt;B)
+		{
+			swap(A,B);
+		}
+		f[A]+=C;
+		if(B!=n)
+		{
+			f[B+1]-=C;
+		}
+	}
+	for(int i=1;i&lt;=n;i++)
+	{
+		a[i]=a[i-1]+f[i];
+		cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
+	}
+	return 0;
+} 
+</code></pre>
+<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
+<h4 id="the-end">The end</h4>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/42aVSTIk3oDy6qN.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/tl/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-12">2020-04-12</time>
+                  <h4 class="title white no-margin">笔记 图论</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qwdb.github.io/post/12722/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-04-12">2020-04-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qwdb.github.io/post/12722/">啊哈添柴 12722. 差分入门</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qwdb.github.io/post/tl/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://i.loli.net/2020/04/02/42aVSTIk3oDy6qN.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-04-12">2020-04-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qwdb.github.io/post/tl/">笔记 图论</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qwdb.github.io/post/dys/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://i.loli.net/2020/03/28/wngadBfAO8lErhU.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-04-12">2020-04-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qwdb.github.io/post/dys/">笔记 堆与树</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qwdb.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">千文杜博的博客~</a></h4>
+                    <p class="founder">并非所有流浪者，都迷失了自我！</p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://github.com/Qwdb" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://qwdb.github.io"><img src="/media/images/gridea.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 10 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+<script>
+    new Valine({
+        el: '#comments',
+        appId: 'ia01VWYvuQymgmjhfVWp2sXI-gzGzoHsz' ,
+        appKey: 'JUha7UOwjgPcDzhy5aLrIqg9',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
+</script>
+    
+
+      
+    <script src="https://qwdb.github.io/media/js/functions-post.js"></script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>

@@ -1,0 +1,417 @@
+<html>
+  <head>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>洛谷 P1112 波浪数 | 千文杜博的博客~</title>
+<meta name="description" content="并非所有流浪者，都迷失了自我！" />
+<link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
+<link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
+
+<script src="https://qwdb.github.io/media/js/jquery.min.js"></script>
+<script src="https://qwdb.github.io/media/js/masonry.pkgd.min.js"></script>
+<script src="https://qwdb.github.io/media/js/aos.js"></script>
+<script src="https://qwdb.github.io/media/js/pace.min.js"></script>
+<script src="https://qwdb.github.io/media/js/view-image.min.js"></script>
+<script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
+<script src="https://qwdb.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="P1112 波浪数 题解
+题目链接
+序言：以后想不出序言说什么就放一句名言吧
+ 我们都是阴沟里的虫子,但总还是得有人仰望星空
+
+						——刘慈欣 《三体》
+
+1. 入手程序
+第一步，分析数据，暴力肯定不行
+第二部，考虑是否可以模拟，发..." />
+    <meta name="keywords" content="洛谷" />
+    <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
+  </head>
+  <body>
+            <header id="header" class="grid-container">
+        <!-- start: .menu-wrapper -->
+        <div class="menu-mobile"> 
+          <i class="fa fa-reorder"></i>
+        </div>
+        <div class="menu-wrapper">
+          <div class="">
+            <div class="logo">
+              <a href="https://qwdb.github.io"><img src="\media\images\custom-headerLogo.jpg" alt=""></a>
+            </div>
+            <!-- start: .main-nav -->
+
+            <nav class="main-nav grid-container grid-parent">
+              <ul id="menu-header" class="menu gradient-effect">
+                <li class=""><a href="https://qwdb.github.io" class="menu">首页</a></li>
+                
+                  <li class="" >
+                    <a href="/posts" class="menu">
+                      文章
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="/tags" class="menu">
+                      标签
+                    </a>
+                  </li>
+                
+                  <li class="" >
+                    <a href="post/about" class="menu">
+                      关于
+                    </a>
+                  </li>
+                
+                <li class="search-menu-item hide-on-mobile hide-on-tablet"><a href="#search-lightbox" class="lightbox mfp-inline"><i class="fa fa-search-line"></i></a></li>
+              </ul>
+            </nav>
+            <a href="#search-lightbox" class="lightbox epcl-search-button mfp-inline hide-on-tablet hide-on-desktop"><i class="fa fa-search-line"></i></a>
+            <!-- end: .main-nav -->
+            <div class="clear"></div>
+            <div class="border hide-on-tablet hide-on-mobile"></div>
+          </div>    
+          <div class="clear"></div>
+        </div>
+        <!-- end: .menu-wrapper -->
+        <div class="clear"></div>
+      </header>
+      <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
+        <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
+          <div class="search-wrapper section">
+            <form id="gridea-search-form" data-update="1586662273133" action="/search/index.html" class="search-form" _lpchecked="1">
+              <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
+              <button type="submit" class="submit" aria-label="Submit">
+                <i class="fa fa-search-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
+
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/NWJ57dME6v9BP4c.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">37 分钟前</span></time>
+              
+              <a href="https://qwdb.github.io/post/P1112/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P1112/"> </span>
+              </a>
+              <span id="/P1112/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">洛谷 P1112 波浪数</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h1 id="p1112-波浪数-题解"><strong>P1112 波浪数 题解</strong></h1>
+<p><a href="https://www.luogu.com.cn/problem/P1112">题目链接</a></p>
+<p>序言：<s>以后想不出序言说什么就放一句名言吧</s></p>
+<pre><code> 我们都是阴沟里的虫子,但总还是得有人仰望星空
+
+						——刘慈欣 《三体》
+</code></pre>
+<h3 id="1-入手程序">1. 入手程序</h3>
+<p>第一步，分析数据，暴力肯定不行</p>
+<p>第二部，考虑是否可以模拟，发现虽然不能纯模拟，但可以使用...</p>
+<h4 id="构造法">构造法</h4>
+<h3 id="2-编程思路">2. 编程思路</h3>
+<p>所谓的构造法，指的是逆向的通过枚举或其他方法来构造出题目要求的数或情况</p>
+<p>具体到这一题，就是枚举i进制下j，k轮流出现构成的波浪数的存在并存到对应重数数组下</p>
+<p>最后将题目要求的重数输出出来</p>
+<h4 id="注意">注意：</h4>
+<ol>
+<li>一位数也可以是波浪数</li>
+<li>波浪数轮流出现的两个数不能一样</li>
+<li>波浪数不一定要是“ababab...”形式，也可以是“abababa...”形式</li>
+<li>一个波浪数不一定一定要在十进制下是波浪数</li>
+</ol>
+<h3 id="3-ac代码">3. AC代码</h3>
+<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int m[10000005];//存重数 
+int a,b,c,d,e;
+int main()
+{
+	cin&gt;&gt;a&gt;&gt;b&gt;&gt;c&gt;&gt;d&gt;&gt;e;
+	for(int i=a;i&lt;=b;i++)//在i进制下 
+	{
+		for(int j=0;j&lt;i;j++)//枚举第一个数 
+		{
+			for(int k=1;k&lt;i;k++)//枚举第二个数 
+			{
+				if(j!=k)//两数不能一样 
+				{
+					int v1=0;//构造用 
+					int v2=0;//计数 用 
+					while(v1&lt;=d)
+					{
+						//循环用两个数构造 
+						if(v2%2==0)
+						{
+							v1=v1*i+j;
+						}
+						else
+						{
+							v1=v1*i+k;
+						} 
+						v2++;
+						if(v1&gt;=c &amp;&amp; v1&lt;=d)
+						{
+							m[v1]++;//如果是波浪数，存到对应位置 
+						}
+					}
+				}
+			}	
+		} 
+	}
+	for(int i=c;i&lt;=d;i++)
+	{
+		if(m[i]==e)//如果有题目要求的重数，输出
+		{
+			cout&lt;&lt;i&lt;&lt;endl;	
+		} 
+	}
+	return 0;
+}
+</code></pre>
+<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
+<h4 id="the-end">The end</h4>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              <article class="prev grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/IjARhzgtp5ibeJX.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/P1125/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-12">2020-04-12</time>
+                  <h4 class="title white no-margin">洛谷 P1125 笨小猴</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/08/sb52HdTVNMqXfcJ.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/P3369/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-04-12">2020-04-12</time>
+                  <h4 class="title white no-margin">洛谷 P3369 【模板】普通平衡树</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
+            
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
+          </div>
+      </main>
+
+          <footer id="footer" class="grid-container">
+        <div class="widgets row gradient-effect">
+            <div class="default-sidebar border-effect">
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_epcl_posts_thumbs underline-effect">
+                  <h4 class="widget-title title white bordered">最新文章</h4>
+                  
+                  
+                  <article class="item post-0 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qwdb.github.io/post/12722/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-04-12">2020-04-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qwdb.github.io/post/12722/">啊哈添柴 12722. 差分入门</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-1 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qwdb.github.io/post/tl/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://i.loli.net/2020/04/02/42aVSTIk3oDy6qN.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-04-12">2020-04-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qwdb.github.io/post/tl/">笔记 图论</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  <article class="item post-2 post type-post status-publish format-standard has-post-thumbnail hentry">
+                    <a href="https://qwdb.github.io/post/dys/" class="thumb hover-effect">
+                      <span class="fullimage cover" style="display:block;border-radius:50%;background-image: url('https://i.loli.net/2020/03/28/wngadBfAO8lErhU.jpg');"></span>
+                    </a>
+                    <div class="info gradient-effect">
+                      <time datetime="2020-04-12">2020-04-12</time>
+                      <h4 class="title usmall">
+                        <a href="https://qwdb.github.io/post/dys/">笔记 堆与树</a>
+                      </h4>
+                    </div>
+                    <div class="clear"></div>
+                  </article>
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="tag_cloud-2" class="widget widget_tag_cloud underline-effect">
+                  <h4 class="widget-title title white bordered">标签云</h4>
+                  <div class="tagcloud">
+                    
+                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
+                    
+                  </div>
+                  <div class="clear"></div>
+                </section>
+              </div>
+
+              <div class="grid-33 tablet-grid-50 mobile-grid-100">
+                <section id="epcl_about-2" class="widget widget_epcl_about underline-effect">
+                  <h4 class="widget-title title white bordered">关于我</h4>
+                  <div class="avatar">
+                    <a href="" class="translate-effect thumb"><span class="fullimage cover" style="background-image: url(https://qwdb.github.io/images/avatar.png);"></span></a>
+                  </div>
+                  <div class="info">
+                    <h4 class="title small author-name gradient-effect no-margin"><a href="">千文杜博的博客~</a></h4>
+                    <p class="founder">并非所有流浪者，都迷失了自我！</p>
+                    <div class="social">
+                      
+                          
+                            <a href="https://github.com/Qwdb" class="translate-effect" target="_blank"><i class="fa fa-github"></i></a>
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                        
+                      
+                    </div> 
+                  </div>
+                  <div class="clear"></div>
+                  </section>
+              </div>
+
+            </div>
+            <div class="clear"></div>
+        </div>
+
+        <div class="logo">
+          <a href="https://qwdb.github.io"><img src="/media/images/gridea.png" alt=""></a>
+        </div>
+        <p class="published border-effect">
+          ©2019 共 10 篇文章
+          <br/>
+          Theme <a href="https://gridea.dev/" target="_blank">「breek」</a> Powered by <a href="https://gridea.dev/" target="_blank">「Gridea」</a>
+        </p>
+        
+        <a href="javascript:void(0)" id="back-to-top" class="epcl-button dark" style="display:none">
+          <i class="fa fa-arrow"></i>
+        </a>
+    </footer>
+    
+    <div class="clear"></div>
+
+        
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+<script type="text/javascript" src="https://cdn.staticfile.org/valine/1.3.10/Valine.Pure.min.js"></script>
+<script>
+    new Valine({
+        el: '#comments',
+        appId: 'ia01VWYvuQymgmjhfVWp2sXI-gzGzoHsz' ,
+        appKey: 'JUha7UOwjgPcDzhy5aLrIqg9',
+        pageSize: 30,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
+</script>
+    
+
+      
+    <script src="https://qwdb.github.io/media/js/functions-post.js"></script>
+
+    </div>
+    <!-- end: #wrapper -->
+  </body>
+</html>
