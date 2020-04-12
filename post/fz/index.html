@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>洛谷 P1417 烹调方案 | 千文杜博的博客~</title>
+<title>分站 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -15,16 +15,9 @@
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="P1417 烹调方案 题解
-题目链接
-序言：
-最近在练DP，刷到了这道题，众所周知，DP最重要的是有大佬给出能推出状态转移方程，这题就是这样的一题~
-1.入手程序
-一看：嗯~是一道明显的DP
-再看：咦~好像不对劲，这是什么？
-
-如果在t时刻..." />
-    <meta name="keywords" content="洛谷" />
+    <meta name="description" content="洛谷博客
+" />
+    <meta name="keywords" content="" />
     <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
     <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
@@ -122,23 +115,21 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/Yhdwgvu1KjUtLRi.jpg');">
+          <div class="featured-image cover" style="background-image: url('\media\images\custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">7 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-03-31"><i class="fa fa-calendar"></i><span class="lately">12 天前</span></time>
               
-              <a href="https://qwdb.github.io/post/P1417/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P1417/"> </span>
+              <a href="https://qwdb.github.io/post/fz/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/fz/"> </span>
               </a>
-              <span id="/P1417/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/fz/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
-                    
               </div>
-              <h1 class="title ularge white bold">洛谷 P1417 烹调方案</h1>
+              <h1 class="title ularge white bold">分站</h1>
             </div>
           </div>
         </div>  
@@ -148,92 +139,7 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="p1417-烹调方案-题解"><strong>P1417 烹调方案 题解</strong></h1>
-<p><a href="https://www.luogu.com.cn/problem/P1417">题目链接</a></p>
-<p>序言：</p>
-<p><em>最近在练DP，刷到了这道题，众所周知，DP最重要的是<s>有大佬给出</s>能推出状态转移方程，这题就是这样的一题~</em></p>
-<h3 id="1入手程序">1.入手程序</h3>
-<p>一看：嗯~是一道明显的DP</p>
-<p>再看：咦~好像不对劲，这是什么？</p>
-<blockquote>
-<p>如果在t时刻完成第i样食材则得到ai-t*bi的美味指数</p>
-</blockquote>
-<p>一想：啊~ 原来不是基本DP啊，看起来好难<s>溜了溜了</s></p>
-<p>再想：嘿~ 怎么能这样轻易放弃呢！</p>
-<p>开始推状态转移方程！</p>
-<h3 id="2编程思路">2.编程思路</h3>
-<p>首先，这个题状态转移方程难推的地方在于，因为有b[i]的存在，一件食材先后制作获得的美味指数不同，那么~</p>
-<h1 id="sort大法好">sort大法好！</h1>
-<p>cmp怎么写呢？<br>
-慢慢推吧~<br>
-（强烈建议此时在看题解的你停下来推一下）<br>
-推完了么？<br>
-往下看吧????<br>
-关于每两个食材i和j，先做i和先做j的美味指数分别为：</p>
-<pre><code class="language-c">1.a[i]-(t+c[i])*b[i]+a[j]-(t+c[i]+c[j])*b[j]
-2.a[j]-(t+c[j])*b[j]+a[i]-(t+c[i]+c[j])*b[i]
-</code></pre>
-<p>如果1&gt;2：</p>
-<pre><code class="language-c">a[i]-t*b[i]-c[i]*b[i]+a[j]-t*b[j]-c[i]*b[j]-c[j]*b[j]&gt;
-a[j]-t*b[j]-c[j]*b[j]+a[i]-t*b[i]-c[i]*b[i]-c[j]*b[i]
-↓
--t*b[i]-c[i]*b[i]-t*b[j]-c[i]*b[j]-c[j]*b[j]&gt;
--t*b[j]-c[j]*b[j]-t*b[i]-c[i]*b[i]-c[j]*b[i]
-↓
--c[i]*b[j]&gt;-c[j]*b[i]
-</code></pre>
-<p>ok~<br>
-羌湖~ 起飞~</p>
-<p>嗯嗯，还有一句话想说</p>
-<h1 id="十年oi一场空不开long-long见祖宗">十年OI一场空，不开long long见祖宗</h1>
-<h3 id="3ac代码">3.AC代码</h3>
-<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-struct Node
-{
-	long long a,b,c;	
-}s[55];
-long long t,n;
-long long dp[100005];
-long long ans;
-bool cmp(Node x,Node y)
-{
-	return -x.c*y.b&gt;-y.c*x.b;//这短短的一行，我推了多久啊。。。
-}
-int main()
-{
-	//读入
-    cin&gt;&gt;t&gt;&gt;n;
-	for(long long i=1;i&lt;=n;i++)//其实这些地方可以不开long long
-	{
-		cin&gt;&gt;s[i].a;
-	}
-	for(long long i=1;i&lt;=n;i++)
-	{
-		cin&gt;&gt;s[i].b;
-	}
-	for(long long i=1;i&lt;=n;i++)
-	{
-		cin&gt;&gt;s[i].c;
-	}
-    //排序
-	sort(s+1,s+1+n,cmp);//sort大法好！
-    //01背包dp
-	for(long long i=1;i&lt;=n;i++)
-	{
-		for(long long j=t;j&gt;=s[i].c;j--)
-		{
-			dp[j]=max(dp[j],dp[j-s[i].c]+s[i].a-s[i].b*j);
-			ans=max(ans,dp[j]);
-		}
-	}
-    //输出
-	cout&lt;&lt;ans;
-	return 0;
-} 
-</code></pre>
-<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
-<h4 id="the-end">The end</h4>
+                  <p><a href="https://122235.blog.luogu.org/">洛谷博客</a></p>
 
                 </div>
                 <div class="clear"></div>
@@ -244,11 +150,11 @@ int main()
             <section class="related section">
               
               <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/8h4DGOXaQPBM1uc.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P2799/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/08/sb52HdTVNMqXfcJ.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/P3369/" class="full-link"></a>
                  <div class="info">
                   <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P2799 国王的魔镜</h4>
+                  <h4 class="title white no-margin">洛谷 P3369 【模板】普通平衡树</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
@@ -256,19 +162,6 @@ int main()
                 <div class="overlay"></div>
               </article>
               
-              
-              <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/IjARhzgtp5ibeJX.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P1125/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P1125 笨小猴</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
               
 
                 <div class="clear"></div>
