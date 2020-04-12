@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>洛谷 P2799 国王的魔镜 | 千文杜博的博客~</title>
+<title>啊哈添柴 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -14,19 +14,11 @@
 <script src="https://qwdb.github.io/media/js/view-image.min.js"></script>
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
-    <meta name="referrer" content="never">
-    <meta name="description" content="P2799 国王的魔镜 题解
-题目链接
-序言：
-我看题解中各种方法我这个蒟蒻都理解不了，所以我决定来发一篇模拟也能AC的代码。
-1.入手程序
-根据题意，我们的模拟过程就是倒退项链的变化过程。那么项链在什么情况下可以增长呢？不妨先看看样例：
-..." />
-    <meta name="keywords" content="洛谷" />
-    <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
-    <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
+    <!-- start: #wrapper -->
+    <div class="wrapper">
+      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -93,165 +85,45 @@
         </div>
       </div>
 
-      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
-
-        <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/8h4DGOXaQPBM1uc.jpg');">
-            <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">5 小时前</span></time>
-              
-              <a href="https://qwdb.github.io/post/P2799/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P2799/"> </span>
-              </a>
-              <span id="/P2799/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
-              
-            </div>
-            <div class="info">
-              <div class="tags ">
-                
-                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
-                    
-              </div>
-              <h1 class="title ularge white bold">洛谷 P2799 国王的魔镜</h1>
-            </div>
-          </div>
-        </div>  
-
+      <main id="home" class="main fullcover no-sidebar content">
+        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
         <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile">
-            <article class="main-article post">
-              <section class="post-content">
-                <div class="text">
-                  <h1 id="p2799-国王的魔镜-题解"><strong>P2799 国王的魔镜 题解</strong></h1>
-<p><a href="https://www.luogu.com.cn/problem/P1057">题目链接</a></p>
-<p>序言：</p>
-<p><em>我看题解中各种方法我这个蒟蒻都理解不了，所以我决定来发一篇模拟也能AC的代码。</em></p>
-<h3 id="1入手程序">1.入手程序</h3>
-<p>根据题意，我们的模拟过程就是倒退项链的变化过程。那么项链在什么情况下可以增长呢？不妨先看看样例：</p>
-<pre><code class="language-c">    ABBAABBA
-    2
-</code></pre>
-<p>样例中的项链的变化过程如下：<br>
-AB-&gt;ABBA-&gt;ABBAABBA</p>
-<p>因此，可以推导出两条规则：</p>
-<h4 id="1项链只要变化过它的长度就一定是偶数">（1）项链只要变化过，它的长度就一定是偶数。</h4>
-<h4 id="2项链只要变化过它就一定是一个回文字符串类似于回文数">（2）项链只要变化过，它就一定是一个回文字符串（类似于<a href="https://baike.baidu.com/item/%E5%9B%9E%E6%96%87%E6%95%B0/1830170?fr=aladdin">回文数</a>）。</h4>
-<h3 id="2编程思路">2.编程思路</h3>
-<p>上面推导出了两项规则，但是还不足以帮助我们来模拟项链变化过程，因为它是正向的，于是继续推导,终于推出了代码的核心!</p>
-<h4 id="如果项链的长度是偶数且回文它就有可能是变化过的">如果项链的长度是偶数且回文，它就有可能是变化过的。</h4>
-<h3 id="并且由于我们要求最初的项链可能的最小长度所以就意味着">并且由于我们要求最初的项链可能的最小长度，所以就意味着......</h3>
-<h2 id="如果项链的长度是偶数且回文它项链的长度就能缩短">如果项链的长度是偶数且回文，它项链的长度就能缩短！</h2>
-<p>所以，我们的任务就是模拟这个过程。</p>
-<h3 id="3ac代码">3.AC代码</h3>
-<p>终于到了激动人心的AC时刻！</p>
-<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-string s;
-//递归倒推
-int mj(string s)
-{
-    int sl=s.size();
-    //如果是奇数就一定是最开始的结果
-    if(sl%2==1)
-    {
-        return sl;
-    }
-    string s2=s;
-    reverse(s2.begin(),s2.end());//rerse函数是判断一个字符串是否回文的一个工具，具体用法为：reverse(字符串.begin(),字符串.end())
+          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
+                
+            <!-- start: .articles -->
+            <div class="main-article post">
+  <h2 class="year"># 啊哈添柴</h2>
+    
+      <article class="item default grid-33 tablet-grid-50 np-mobile">
+        <a href="https://qwdb.github.io/post/12722/" class="thumb hover-effect">
+          <span class="fullimage cover" style="display: block;background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');"></span>
+        </a>
+        <div class="info gradient-effect">
+          <time datetime="2020-04-12">2020-04-12</time>
+          <h4 class="title usmall">
+            <a href="https://qwdb.github.io/post/12722/">啊哈添柴 12722. 差分入门</a>
+          </h4>
+        </div>
+      </article>
 
-    //如果是偶数就据续处理
-    if(s==s2)
-    {
-        string ts;
-        for(int i=1;i&lt;=sl/2;i++)
-        {
-            ts+=s[i-1];
-        }
-        return mj(ts);
-    }
-    return sl;
-}
-int main()//好短的主函数啊~
-{
-    cin&gt;&gt;s;
-    cout&lt;&lt;mj(s);//直接输出处理后的结果
-    return 0;
-}
-
-</code></pre>
-<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
-<h4 id="the-end">The end</h4>
-
-                </div>
-                <div class="clear"></div>
-              </section>
-            </article>
-            <div class="clear"></div>
-
-            <section class="related section">
-              
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/s4KaD1Omvn93YkE.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P1057/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P1057 传球游戏</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-              
-              <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/Yhdwgvu1KjUtLRi.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P1417/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P1417 烹调方案</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
-
-                <div class="clear"></div>
-            </section>
-
-              <div class="clear"></div>
-              
+    
+    <div class="clear"></div>
+</div>
+            <!-- end: .articles -->
             
-              <div id="comments" class="bg-white hosted ">
-                <div class="clear"></div>
-<script>
-jQuery(document).ready(function($){
-    $('.vemoji-btn').text('😀');
-    $("#comments").on('click', 'span.vat',function(){
-        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
-        $('textarea#veditor').focus();
-    })
-    if(window.location.hash){
-        var checkExist = setInterval(function() {
-            if ($(window.location.hash).length) {
-                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
-                clearInterval(checkExist);
-            }
-        }, 100);
-    }
-})
-</script>
-
+                        <div class="epcl-pagination section">
+              <div class="nav">
+                
+                
               </div>
-            
-
             </div>
+            
           </div>
+          </div>
+        </div>
       </main>
 
-          <footer id="footer" class="grid-container">
+        <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -400,9 +272,6 @@ jQuery(document).ready(function($){
     })
 </script>
     
-
-      
-    <script src="https://qwdb.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
