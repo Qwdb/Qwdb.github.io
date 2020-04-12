@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>洛谷 P1057 传球游戏 | 千文杜博的博客~</title>
+<title>洛谷 P1794 装备运输 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -15,13 +15,16 @@
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="P1057 传球游戏 题解
+    <meta name="description" content="P1794 装备运输 题解
 题目链接
-序言：
-我看题解中除了各种对于我这个蒟蒻来说稀奇古怪高深莫测的方法之外就只有用二维数组的了，所以我决定来发一篇用初学者们也都熟悉的一维数组也能AC的方法。
-1.入手程序
-一拿到题，哇！完全没思路哇( ⊙..." />
-    <meta name="keywords" content="洛谷" />
+序言：做水一道背包练练手~
+1. 入手程序
+01背包，三重限制，直接开整~
+2. 编程思路
+唉，说实话，这个题没什么难点，但这儿总不能空着吧?
+给个01背包模板吧
+for(int i=1;i&lt;=n..." />
+    <meta name="keywords" content="" />
     <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
     <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
@@ -113,23 +116,21 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/s4KaD1Omvn93YkE.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/12/zMPbEkmx7S9cD5j.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">10 小时前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">2 分钟前</span></time>
               
-              <a href="https://qwdb.github.io/post/P1057/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P1057/"> </span>
+              <a href="https://qwdb.github.io/post/P1794/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P1794/"> </span>
               </a>
-              <span id="/P1057/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/P1794/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
-                    
               </div>
-              <h1 class="title ularge white bold">洛谷 P1057 传球游戏</h1>
+              <h1 class="title ularge white bold">洛谷 P1794 装备运输</h1>
             </div>
           </div>
         </div>  
@@ -139,113 +140,55 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="p1057-传球游戏-题解"><strong>P1057 传球游戏 题解</strong></h1>
-<p><a href="https://www.luogu.com.cn/problem/P1057">题目链接</a></p>
-<p>序言：</p>
-<p><em>我看题解中除了各种对于我这个蒟蒻来说<s>稀奇古怪</s>高深莫测的方法之外就只有用二维数组的了，所以我决定来发一篇用初学者们也都熟悉的一维数组也能AC的方法。</em></p>
-<h3 id="1入手程序">1.入手程序</h3>
-<p>一拿到题，哇！完全没思路哇( ⊙o⊙ )</p>
-<p>所以，画个表吧！</p>
-<p>由于我们知道小蛮一定在第一位，所以我们可以用一个数组来模拟这个圈：</p>
-<table>
-<thead>
-<tr>
-<th>可能传到次数\人</th>
-<th style="text-align:center">1（小蛮）</th>
-<th style="text-align:left">2</th>
-<th style="text-align:right">3</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>开始时</td>
-<td style="text-align:center">1</td>
-<td style="text-align:left">0</td>
-<td style="text-align:right">0</td>
-</tr>
-<tr>
-<td>第一次传球</td>
-<td style="text-align:center">0</td>
-<td style="text-align:left">1</td>
-<td style="text-align:right">1</td>
-</tr>
-<tr>
-<td>第二次传球</td>
-<td style="text-align:center">2</td>
-<td style="text-align:left">1</td>
-<td style="text-align:right">1</td>
-</tr>
-<tr>
-<td>第三次传球</td>
-<td style="text-align:center">2</td>
-<td style="text-align:left">3</td>
-<td style="text-align:right">3</td>
-</tr>
-</tbody>
-</table>
-<p>好了，定义好了数组，就可以开始准备模拟了。我们先画一个表：（样例一）<br>
-现在我们看到，第三次传球后小蛮有两种可能性手上有球，分别是1-&gt;2-&gt;3-&gt;1和1-&gt;3-&gt;2-&gt;1，因此我们知道了每次把有球的人的旁边两个人加上这个人的可能次数，就可以得到正确结果。（这其实就是小学奥数传球法）</p>
-<h3 id="2编程思路">2.编程思路</h3>
-<p>上面的一句话有一些难懂，这里用代码解释一下：</p>
-<pre><code class="language-cpp">    a[j+1]+=a[j];
-    a[j-1]+=a[j];
+                  <h1 id="p1794-装备运输-题解"><strong>P1794 装备运输 题解</strong></h1>
+<p><a href="https://www.luogu.com.cn/problem/P1794">题目链接</a></p>
+<p>序言：<em>做<s>水</s>一道背包练练手~</em></p>
+<h3 id="1-入手程序">1. 入手程序</h3>
+<p>01背包，三重限制，直接开整~</p>
+<h3 id="2-编程思路">2. 编程思路</h3>
+<p>唉，说实话，这个题没什么难点，但这儿总不能空着吧?<br>
+给个01背包模板吧</p>
+<pre><code class="language-c">for(int i=1;i&lt;=n;i++)
+{
+	for(int j=v;j&gt;=v[i];j--)
+	{
+		for(int k=u;k&gt;=u[i];k--)
+		{
+			//重复限制个数-1次
+			//动态转移方程
+		}
+	}
+}
 </code></pre>
-<p>所以，我们的任务就是模拟这个过程。</p>
-<h4 id="注意">注意：</h4>
-<p>1.不应该用数值来判断是否到边界（0或n），而应该用下标来判断</p>
-<p>2.a[j]不能直接为零，而是减去上一次传球的可能次数（因为可能不仅他要传给别人，别人也要传给他）</p>
-<h4 id="对应解决方案">对应解决方案：</h4>
-<p>1.改为j-1和j+1</p>
-<p>2.使用一个b数组来存储上一次的</p>
-<h3 id="3ac代码">3.AC代码</h3>
-<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+<h3 id="3-ac代码">3. AC代码</h3>
+<pre><code class="language-c">//V和G表示最大体积和重量
+//N表示仓库有N件装备
+//每行3个数hi ti zi表示各装备的火力值、体积和重量
+#include&lt;bits/stdc++.h&gt;
 using namespace std;
-const int mm=40;
-int n,m;
-int a[mm],b[mm];
+int v,g,n;
+int h[505],t[505],z[505];
+int dp[505][505];
 int main()
 {
-    //读入
-    cin&gt;&gt;n&gt;&gt;m;
-    a[1]=b[1]=1;
-    //循环m次传球
-    for(int i=1;i&lt;=m;i++)
-    {
-        for(int j=1;j&lt;=n;j++)
-        {
-            //分不同情况处理，这里开两个数组，类似于差分操作
-            if(a[j]&gt;=1)
-            {
-                if(j-1&lt;1)
-                {
-                    a[n]+=b[j];
-                }
-                else
-                {
-                    a[j-1]+=b[j];
-                }
-                if(j+1&gt;n)
-                {
-                    a[1]+=b[j];
-                }
-                else
-                {
-                    a[j+1]+=b[j];
-                }
-                a[j]-=b[j];
-            }
-        }
-        //加起来
-        for(int j=1;j&lt;=n;j++)
-        {
-            b[j]=a[j];
-        }
-    }
-    //输出1号也就是小强的可能传到数量
-    cout&lt;&lt;a[1];
-    return 0;
+	cin&gt;&gt;v&gt;&gt;g&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;h[i]&gt;&gt;t[i]&gt;&gt;z[i];
+	}
+	for(int i=1;i&lt;=n;i++)
+	{
+		for(int j=v;j&gt;=t[i];j--)
+		{
+			for(int k=g;k&gt;=z[i];k--)
+			{
+				dp[j][k]=max(dp[j-t[i]][k-z[i]]+h[i],dp[j][k]);//动态转移方程 
+			}
+		}
+	}
+	cout&lt;&lt;dp[v][g]; 
+	return 0;
 }
-
 </code></pre>
 <h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
 <h4 id="the-end">The end</h4>
@@ -258,26 +201,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/03/28/wngadBfAO8lErhU.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/dys/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">笔记 堆与树</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/8h4DGOXaQPBM1uc.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P2799/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/12722/" class="full-link"></a>
                  <div class="info">
                   <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P2799 国王的魔镜</h4>
+                  <h4 class="title white no-margin">啊哈添柴 12722. 差分入门</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
