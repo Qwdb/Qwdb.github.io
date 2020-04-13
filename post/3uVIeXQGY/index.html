@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>洛谷 P3369 【模板】普通平衡树 | 千文杜博的博客~</title>
+<title>书评 茶馆 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -15,14 +15,9 @@
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="P3369 【模板】普通平衡树 题解
-题目链接
-序言：调了超久的一道题！向提高组冲击的第一步！treap！
-1. 入手程序
-模板题么，就没什么思路了，既然是练习treap，直接开整呗~
-2. 编程思路
-首先，Treap=Tree+Heap，..." />
-    <meta name="keywords" content="洛谷" />
+    <meta name="description" content="https://book.douban.com/subject/5363767/
+" />
+    <meta name="keywords" content="" />
     <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
     <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
@@ -120,23 +115,21 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/08/sb52HdTVNMqXfcJ.jpg');">
+          <div class="featured-image cover" style="background-image: url('\media\images\custom-featureImage.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">1 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-04-13"><i class="fa fa-calendar"></i><span class="lately">3 分钟前</span></time>
               
-              <a href="https://qwdb.github.io/post/P3369/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P3369/"> </span>
+              <a href="https://qwdb.github.io/post/3uVIeXQGY/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/3uVIeXQGY/"> </span>
               </a>
-              <span id="/P3369/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/3uVIeXQGY/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
-                    
               </div>
-              <h1 class="title ularge white bold">洛谷 P3369 【模板】普通平衡树</h1>
+              <h1 class="title ularge white bold">书评 茶馆</h1>
             </div>
           </div>
         </div>  
@@ -146,227 +139,7 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="p3369-模板普通平衡树-题解"><strong>P3369 【模板】普通平衡树 题解</strong></h1>
-<p><a href="https://www.luogu.com.cn/problem/P3369">题目链接</a></p>
-<p>序言：<em>调了超久的一道题！向提高组冲击的第一步！treap！</em></p>
-<h3 id="1-入手程序">1. 入手程序</h3>
-<p>模板题么，就没什么思路了，既然是练习treap，直接开整呗~</p>
-<h3 id="2-编程思路">2. 编程思路</h3>
-<p>首先，Treap=Tree+Heap，Tree指的是二叉排序树，Heap则是指堆<br>
-它融合了二叉排序树的优点：操作方便、多样<br>
-同时使用堆结构规避了二叉排序树容易退化成一条链的问题<br>
-剩下的看代码吧~<br>
-放心，注释多到<strong>爆炸</strong></p>
-<h3 id="3-ac代码">3. AC代码</h3>
-<pre><code class="language-c">/*
-size[i] 以i为根的子树的节点数
-v[i] i节点的权值
-num[i] 由于可能有重复（上文讲的是没有重复的），所以，我们将权值一样的存在一个节点里面，num数组存储的是i节点存的个数
-son[i][2] 存储i节点的儿子，注意，这里不是完全二叉树所以需要存储儿子，son[i][0]表示左儿子，son[i][1]表示右儿子。
-rd[i] i节点的一个随机值
-*/
-#include&lt;bits/stdc++.h&gt;
-using namespace std;
-const int MAX=100500;
-int n;
-int size[MAX],num[MAX],v[MAX],son[MAX][2],rd[MAX];
-int x,opt,r,sum;//x,opt与题干中同义，sum为节点个数 
-void gx(int g)//更新节点个数 
-{
-	size[g]=size[son[g][0]]+size[son[g][1]]+num[g];
-	//g的节点数=左右儿子节点数之和+g本身存有数量
-}
-void xz(int &amp;g,int d)//旋转，以g为根，d=0左旋，反之右旋 
-{
-	//x^1时,如果x为偶数则为x+1，否则为x-1
-	//这里相当于1变0，0变1 
-	int v1=son[g][d^1];//左旋时，v1为g的右儿子，反之为g的左儿子 
-	son[g][d^1]=son[v1][d];
-	//左旋时，g的右儿子变成v1的左儿子,反之g的左儿子变成v1的右儿子 
-	son[v1][d]=g;
-	//左旋时，v1的左儿子变成g,反之v1的右儿子变成g
-	gx(g);
-	gx(v1); 
-	//更新父节点子节点个数 
-	g=v1;//最后换根 
-}
-void cr(int &amp;g,int x)//插入，以g为根，插入x 
-{
-	if(!g)//空树 
-	{
-		g=++sum;//节点总数加1 
-		size[g]=num[g]=1;//于是有1个节点在树中了,当前节点有1个重复数字
-		v[g]=x;//值为x
-		rd[g]=rand();//生成随机值，拿来维护堆
-		return;
-	}
-	if(v[g]==x)//已有该权值，那么直接个数加加即可
-	{
-		num[g]++;
-		size[g]++;
-		return;
-	}
-	//继续向下寻找 
-	int v1=(x&gt;v[g]);//左儿子或右二子 
-	cr(son[g][v1],x);
-	if(rd[g]&lt;rd[son[g][v1]])//这样转不破坏堆的性质
-	{
-		xz(g,v1^1);//旋转 
-		//x^1时,如果x为偶数则为x+1，否则为x-1
-		//这里相当于1变0，0变1 
-	}
-	gx(g);//更新父节点子节点个数 
-}
-void sc(int &amp;g,int x)//根为g，删除x
-{
-	if(!g)//空节点，不可能有要删的这个点 
-	{
-		return;	
-	}
-	//如果x和v[g]不相等，直接转到相应子树解决问题	
-	if(x&lt;v[g])
-	{
-		sc(son[g][0],x);
-	}
-	else if(x&gt;v[g])
-	{
-		sc(son[g][1],x);	
-	}
-	else//就在这棵树 
-	{
-		if(!son[g][0] &amp;&amp; !son[g][1]) //木有在节点啦，x是叶子节点 
-		{
-			num[g]--;
-			size[g]--;
-			//扣掉个数 
-			if(num[g]==0)//如果没数了，删除节点 
-			{
-				g=0;
-			}
-		}
-		else if(son[g][0] &amp;&amp; !son[g][1])
-		{
-			xz(g,1);//转~ 
-			sc(son[g][1],x); 
-		}
-		else if(!son[g][0] &amp;&amp; son[g][1])
-		{
-			xz(g,0);//转~ 
-			sc(son[g][0],x); 
-		}
-		else if(son[g][0] &amp;&amp; son[g][1])//俩都有，转大的 
-		{
-			int v1=(rd[son[g][0]]&gt;rd[son[g][1]]);//按随机值排，完美避开强迫症~ 
-			xz(g,v1);//转~ 
-			sc(son[g][v1],x); 
-		}
-	}
-	gx(g);
-} 
-int pm(int &amp;g,int x)//根为g,查询x的排名 
-{
-	if(!g)//空空如也~
-	{
-		return 0;	
-	}	
-	if(v[g]==x)//返回左子树个数+1 
-	{
-		return size[son[g][0]]+1;
-	}
-	if(v[g]&lt;x)//x在右子树，返回左子树个数+在右子树的排名 
-	{
-		return size[son[g][0]]+num[g]+pm(son[g][1],x); 
-	}
-	if(v[g]&gt;x)//x在左子树，返回在左子树的排名 
-	{
-		return pm(son[g][0],x);
-	}
-} 
-int cx(int &amp;g,int x)
-{
-	if(g==0)//又是空空如也~
-	{
-		return 0;	
-	} 
-	if(size[son[g][0]]&gt;=x)//左子树节点数&gt;x，在左节点里找 
-	{
-		return cx(son[g][0],x); 
-	}
-	else if(size[son[g][0]]+num[g]&lt;x)//左节点节点数&lt;x，查右子树的第x-左子树节点个数-根储存个数 
-	{
-		return cx(son[g][1],x-num[g]-size[son[g][0]]);
-	}
-	else//当前就是要找的 
-	{
-		return v[g];
-	}
-}
-int qq(int g,int x)//根为g，求x的前驱 
-{
-	if(g==0)//还是空空如也~ 
-	{
-		return -2000000005; 
-	} 
-	else if(v[g]&gt;=x)//在根或右子树，去左子树找 
-	{
-		return qq(son[g][0],x);
-	}
-	else//在左子树，取根和右子树最大的那一个 
-	{
-		return max(v[g],qq(son[g][1],x)); 
-	}
-}
-int hj(int g,int x)//根为g，求x的后继 
-{
-	if(g==0)//依旧空空如也~
-	{
-		return 2000000005;
-	} 
-	if(v[g]&lt;=x)//在根或左子树，去右子树找 
-	{
-		return hj(son[g][1],x);
-	}
-	else//在左子树，取根或右子树最小的那一个 
-	{
-		return min(v[g],hj(son[g][0],x)); 
-	}
-}
-int main()
-{
-	cin&gt;&gt;n;
-	for(int i=1;i&lt;=n;i++)
-	{
-		cin&gt;&gt;opt&gt;&gt;x;
-		if(opt==1)//插入 x 数
-		{
-			cr(r,x);
-		}
-		else if(opt==2)//删除 x 数(若有多个相同的数，因只删除一个)
-		{
-			sc(r,x);
-		}
-		else if(opt==3)//查询 x 数的排名(排名定义为比当前数小的数的个数 +1 )
-		{
-			cout&lt;&lt;pm(r,x)&lt;&lt;endl;	
-		} 
-		else if(opt==4)//查询排名为 x 的数
-		{
-			cout&lt;&lt;cx(r,x)&lt;&lt;endl;
-		}
-		else if(opt==5)//求 x 的前驱(前驱定义为小于 x，且最大的数)
-		{
-			cout&lt;&lt;qq(r,x)&lt;&lt;endl;
-		}
-		else if(opt==6)//求 x 的后继(后继定义为大于 x，且最小的数)
-		{
-			cout&lt;&lt;hj(r,x)&lt;&lt;endl;
-		}
-	}
-	return 0;
-}
-</code></pre>
-<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
-<h4 id="the-end">The end</h4>
+                  <p><a href="https://book.douban.com/subject/5363767/">https://book.douban.com/subject/5363767/</a></p>
 
                 </div>
                 <div class="clear"></div>
@@ -376,19 +149,19 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/NWJ57dME6v9BP4c.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P1112/" class="full-link"></a>
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/12/zMPbEkmx7S9cD5j.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/P1794/" class="full-link"></a>
                  <div class="info">
                   <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P1112 波浪数</h4>
+                  <h4 class="title white no-margin">洛谷 P1794 装备运输</h4>
                 </div>
                  <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
+                  <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
                 </span>
                 <div class="overlay"></div>
               </article>
-              
               
 
                 <div class="clear"></div>
