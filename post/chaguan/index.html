@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>洛谷 P1417 烹调方案 | 千文杜博的博客~</title>
+<title>书评 《茶馆》 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -15,16 +15,12 @@
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="P1417 烹调方案 题解
-题目链接
-序言：
-最近在练DP，刷到了这道题，众所周知，DP最重要的是有大佬给出能推出状态转移方程，这题就是这样的一题~
-1.入手程序
-一看：嗯~是一道明显的DP
-再看：咦~好像不对劲，这是什么？
-
-如果在t时刻..." />
-    <meta name="keywords" content="洛谷" />
+    <meta name="description" content="#书评 《茶馆》
+https://book.douban.com/subject/1036613/
+1.作者简介
+来源
+老舍（1899年2月3日—1966年8月24日），男，原名舒庆春，字舍予，另有笔名絜青、鸿来、非我等。因为老舍生于阴历立..." />
+    <meta name="keywords" content="书评" />
     <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
     <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
@@ -122,23 +118,23 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/Yhdwgvu1KjUtLRi.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/05/01/9nhew8NVmUO12WP.jpg');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">19 天前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-05-01"><i class="fa fa-calendar"></i><span class="lately">6 分钟前</span></time>
               
-              <a href="https://qwdb.github.io/post/P1417/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P1417/"> </span>
+              <a href="https://qwdb.github.io/post/chaguan/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/chaguan/"> </span>
               </a>
-              <span id="/P1417/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/chaguan/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
+                      <a href="https://qwdb.github.io/tag/Yu0vzv8vV/" class="ctag ctag-0 ctag-Yu0vzv8vV" aria-label="">书评</a>
                     
               </div>
-              <h1 class="title ularge white bold">洛谷 P1417 烹调方案</h1>
+              <h1 class="title ularge white bold">书评 《茶馆》</h1>
             </div>
           </div>
         </div>  
@@ -148,90 +144,29 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h1 id="p1417-烹调方案-题解"><strong>P1417 烹调方案 题解</strong></h1>
-<p><a href="https://www.luogu.com.cn/problem/P1417">题目链接</a></p>
-<p>序言：</p>
-<p><em>最近在练DP，刷到了这道题，众所周知，DP最重要的是<s>有大佬给出</s>能推出状态转移方程，这题就是这样的一题~</em></p>
-<h3 id="1入手程序">1.入手程序</h3>
-<p>一看：嗯~是一道明显的DP</p>
-<p>再看：咦~好像不对劲，这是什么？</p>
-<blockquote>
-<p>如果在t时刻完成第i样食材则得到ai-t*bi的美味指数</p>
-</blockquote>
-<p>一想：啊~ 原来不是基本DP啊，看起来好难<s>溜了溜了</s></p>
-<p>再想：嘿~ 怎么能这样轻易放弃呢！</p>
-<p>开始推状态转移方程！</p>
-<h3 id="2编程思路">2.编程思路</h3>
-<p>首先，这个题状态转移方程难推的地方在于，因为有b[i]的存在，一件食材先后制作获得的美味指数不同，那么~</p>
-<h1 id="sort大法好">sort大法好！</h1>
-<p>cmp怎么写呢？<br>
-慢慢推吧~<br>
-（强烈建议此时在看题解的你停下来推一下）<br>
-推完了么？<br>
-往下看吧????<br>
-关于每两个食材i和j，先做i和先做j的美味指数分别为：</p>
-<pre><code class="language-c">1.a[i]-(t+c[i])*b[i]+a[j]-(t+c[i]+c[j])*b[j]
-2.a[j]-(t+c[j])*b[j]+a[i]-(t+c[i]+c[j])*b[i]
+                  <p>#书评 《茶馆》<br>
+<a href="https://book.douban.com/subject/1036613/">https://book.douban.com/subject/1036613/</a></p>
+<h3 id="1作者简介">1.作者简介</h3>
+<p><a href="https://baike.baidu.com/item/%E8%80%81%E8%88%8D/193756?fr=aladdin">来源</a></p>
+<p>老舍（1899年2月3日—1966年8月24日），男，原名舒庆春，字舍予，另有笔名絜青、鸿来、非我等。因为老舍生于阴历立春，父母为他取名“庆春”，大概含有庆贺春来、前景美好之意。上学后，自己更名为舒舍予，含有“舍弃自我”，亦即“忘我”的意思。北京满族正红旗人。中国现代小说家、作家，语言大师、人民艺术家，新中国第一位获得“人民艺术家”称号的作家。代表作有《骆驼祥子》《四世同堂》，<strong>剧本《茶馆》</strong>。<br>
+老舍的一生，总是忘我地工作，他是文艺界当之无愧的“劳动模范”。1966年8月24日，由于受到文化大革命运动中恶毒的攻击和迫害，老舍被逼无奈之下含冤自沉于北京太平湖。2017年9月，中国现代文学长篇小说经典《四世同堂》由东方出版中心出版上市。这是该作自发表以来第一次以完整版形式出版。</p>
+<h3 id="2本文概括">2.本文概括</h3>
+<p>本文主要讲述了民国时期裕泰大茶馆从1898年到1945年倒闭间的变故，虽只讲小小一家茶馆里的事，却讲出了无数人的悲惨遭遇。充分的展现了一个充满白色恐怖的怪异丑陋，伦理扭曲的时代，揭示了旧社会必然灭亡的事实。</p>
+<p>###3.以小见大</p>
+<p>《茶馆》中贯穿全文的便是茶馆掌柜王利发的形象了。王利发是一个勤勤恳恳的人，他处事圆滑，处处小心，凡是见到人，都恭恭敬敬的鞠躬：</p>
+<pre><code>人缘顶要紧，多说好话，多请安，讨人人的喜欢，就不会出大岔子。
 </code></pre>
-<p>如果1&gt;2：</p>
-<pre><code class="language-c">a[i]-t*b[i]-c[i]*b[i]+a[j]-t*b[j]-c[i]*b[j]-c[j]*b[j]&gt;
-a[j]-t*b[j]-c[j]*b[j]+a[i]-t*b[i]-c[i]*b[i]-c[j]*b[i]
-↓
--t*b[i]-c[i]*b[i]-t*b[j]-c[i]*b[j]-c[j]*b[j]&gt;
--t*b[j]-c[j]*b[j]-t*b[i]-c[i]*b[i]-c[j]*b[i]
-↓
--c[i]*b[j]&gt;-c[j]*b[i]
+<p>甚至连相面为生的唐铁嘴都自叹弗如：</p>
+<pre><code>你的嘴比我的还花哨
 </code></pre>
-<p>ok~<br>
-羌湖~ 起飞~</p>
-<p>嗯嗯，还有一句话想说</p>
-<h1 id="十年oi一场空不开long-long见祖宗">十年OI一场空，不开long long见祖宗</h1>
-<h3 id="3ac代码">3.AC代码</h3>
-<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-struct Node
-{
-	long long a,b,c;	
-}s[55];
-long long t,n;
-long long dp[100005];
-long long ans;
-bool cmp(Node x,Node y)
-{
-	return -x.c*y.b&gt;-y.c*x.b;//这短短的一行，我推了多久啊。。。
-}
-int main()
-{
-	//读入
-    cin&gt;&gt;t&gt;&gt;n;
-	for(long long i=1;i&lt;=n;i++)//其实这些地方可以不开long long
-	{
-		cin&gt;&gt;s[i].a;
-	}
-	for(long long i=1;i&lt;=n;i++)
-	{
-		cin&gt;&gt;s[i].b;
-	}
-	for(long long i=1;i&lt;=n;i++)
-	{
-		cin&gt;&gt;s[i].c;
-	}
-    //排序
-	sort(s+1,s+1+n,cmp);//sort大法好！
-    //01背包dp
-	for(long long i=1;i&lt;=n;i++)
-	{
-		for(long long j=t;j&gt;=s[i].c;j--)
-		{
-			dp[j]=max(dp[j],dp[j-s[i].c]+s[i].a-s[i].b*j);
-			ans=max(ans,dp[j]);
-		}
-	}
-    //输出
-	cout&lt;&lt;ans;
-	return 0;
-} 
+<p>他每天满脸堆笑，希望社会安定，只想活下去。</p>
+<h3 id="但">但</h3>
+<h4 id="又怎么样了呢">又怎么样了呢？</h4>
+<h6 id="国民党威胁要砸他的馆子特务向他勒索他根本拿不出的金条流氓要强占他的店面"><strong>国民党威胁要砸他的馆子，特务向他勒索他根本拿不出的金条，流氓要强占他的店面</strong></h6>
+<p>直到死，他才说出：</p>
+<pre><code>人总得活吧？我变尽了办法，不过是为了活下去！
 </code></pre>
+<p><em><strong>一个如此卑微，只想活下去的人，就是旧社会人民生活的真实写照。</strong></em></p>
 <h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
 <h4 id="the-end">The end</h4>
 
@@ -243,26 +178,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/8h4DGOXaQPBM1uc.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P2799/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P2799 国王的魔镜</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/IjARhzgtp5ibeJX.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P1125/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/12/zMPbEkmx7S9cD5j.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/P1794/" class="full-link"></a>
                  <div class="info">
                   <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">洛谷 P1125 笨小猴</h4>
+                  <h4 class="title white no-margin">洛谷 P1794 装备运输</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
