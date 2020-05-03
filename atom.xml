@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qwdb.github.io</id>
     <title>千文杜博的博客~</title>
-    <updated>2020-05-01T16:12:54.543Z</updated>
+    <updated>2020-05-03T14:21:51.764Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qwdb.github.io"/>
     <link rel="self" href="https://qwdb.github.io/atom.xml"/>
@@ -11,6 +11,13 @@
     <icon>https://qwdb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 千文杜博的博客~</rights>
     <entry>
+        <title type="html"><![CDATA[洛谷 P1496 火烧赤壁 题解]]></title>
+        <id>https://qwdb.github.io/post/P1496/</id>
+        <link href="https://qwdb.github.io/post/P1496/">
+        </link>
+        <updated>2020-05-03T14:17:39.000Z</updated>
+    </entry>
+    <entry>
         <title type="html"><![CDATA[剧评 《士兵突击》]]></title>
         <id>https://qwdb.github.io/post/shibingtuji/</id>
         <link href="https://qwdb.github.io/post/shibingtuji/">
@@ -18,7 +25,7 @@
         <updated>2020-05-01T16:09:36.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[书评 《茶馆》]]></title>
+        <title type="html"><![CDATA[书评《茶馆》]]></title>
         <id>https://qwdb.github.io/post/chaguan/</id>
         <link href="https://qwdb.github.io/post/chaguan/">
         </link>
@@ -72,12 +79,5 @@
         <link href="https://qwdb.github.io/post/P1417/">
         </link>
         <updated>2020-04-12T03:00:22.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[洛谷 P1125 笨小猴]]></title>
-        <id>https://qwdb.github.io/post/P1125/</id>
-        <link href="https://qwdb.github.io/post/P1125/">
-        </link>
-        <updated>2020-04-12T02:57:59.000Z</updated>
     </entry>
 </feed>

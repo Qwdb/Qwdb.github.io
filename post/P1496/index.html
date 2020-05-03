@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>笔记 | 千文杜博的博客~</title>
+<title>洛谷 P1496 火烧赤壁 题解 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -14,11 +14,24 @@
 <script src="https://qwdb.github.io/media/js/view-image.min.js"></script>
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="P1496 火烧赤壁 题解
+题目链接
+难度：⭐⭐⭐
+知识点：模拟
+序言：
+额，这好像是一道离散化题，但我做成了模拟
+1. 入手程序
+模拟模拟模拟，完事~
+我怎么这么喜欢模拟呢？（小声bb）
+2. 编程思路
+首先，可以将题目转化一个模型
+用样..." />
+    <meta name="keywords" content="洛谷" />
+    <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -109,58 +122,149 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-                
-            <!-- start: .articles -->
-            <div class="main-article post">
-  <h2 class="year"># 笔记</h2>
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://qwdb.github.io/post/tl/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://i.loli.net/2020/04/02/42aVSTIk3oDy6qN.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-04-12">2020-04-12</time>
-          <h4 class="title usmall">
-            <a href="https://qwdb.github.io/post/tl/">笔记 图论</a>
-          </h4>
-        </div>
-      </article>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://qwdb.github.io/post/dys/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://i.loli.net/2020/03/28/wngadBfAO8lErhU.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-04-12">2020-04-12</time>
-          <h4 class="title usmall">
-            <a href="https://qwdb.github.io/post/dys/">笔记 堆与树</a>
-          </h4>
-        </div>
-      </article>
-
-    
-    <div class="clear"></div>
-</div>
-            <!-- end: .articles -->
-            
-                        <div class="epcl-pagination section">
-              <div class="nav">
-                
-                
-              </div>
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1588525748390&amp;di=af8ed152a48f3fec174d60d5a35505fd&amp;imgtype=0&amp;src=http%3A%2F%2Fimg.pconline.com.cn%2Fimages%2Fupload%2Fupc%2Ftx%2Fphotoblog%2F1111%2F28%2Fc2%2F9772069_9772069_1322463218859_mthumb.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2020-05-03"><i class="fa fa-calendar"></i><span class="lately">4 分钟前</span></time>
+              
+              <a href="https://qwdb.github.io/post/P1496/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/P1496/"> </span>
+              </a>
+              <span id="/P1496/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
             </div>
+            <div class="info">
+              <div class="tags ">
+                
+                      <a href="https://qwdb.github.io/tag/VrQKmQS7z/" class="ctag ctag-0 ctag-VrQKmQS7z" aria-label="">洛谷</a>
+                    
+              </div>
+              <h1 class="title ularge white bold">洛谷 P1496 火烧赤壁 题解</h1>
+            </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="p1496-火烧赤壁-题解">P1496 火烧赤壁 题解</h2>
+<p><a href="https://www.acoj.com/problems/12722">题目链接</a></p>
+<p>难度：⭐⭐⭐<br>
+知识点：模拟</p>
+<p>序言：</p>
+<p><em>额，这好像是一道离散化题，但我做成了模拟</em></p>
+<h3 id="1-入手程序">1. 入手程序</h3>
+<p>模拟模拟模拟，完事~<br>
+我怎么这么喜欢模拟呢？<s>（小声bb）</s></p>
+<h3 id="2-编程思路">2. 编程思路</h3>
+<p>首先，可以将题目转化一个模型<br>
+用样例举例</p>
+<pre><code>3
+-1 1
+5 11
+2 9
+</code></pre>
+<p>画图表示：<br>
+<img src="https://i.loli.net/2020/05/03/YldtSbfHr6p5sGD.png" alt="QQ拼音截图20200503221453.png" loading="lazy"><br>
+如果把首尾都sort一遍，会变成：<br>
+<img src="https://i.loli.net/2020/05/03/cP8WUO1pM6GnIoz.png" alt="QQ拼音截图20200503221439.png" loading="lazy"></p>
+<h2 id="没有影响"><strong>没有影响！</strong></h2>
+<p>所以，我们得到了一个解法：分别对起点和终点数组进行排序，加上每一条线段的长度，若与前一条线段重复减去重复部分，即可算出正确答案~</p>
+<ol>
+<li>AC代码</li>
+</ol>
+<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,ans=0;
+int s[20005],e[20005];
+int main()
+{
+	cin&gt;&gt;n;
+	for(int i=1;i&lt;=n;i++)
+	{
+		cin&gt;&gt;s[i]&gt;&gt;e[i];
+	}
+	sort(s+1,s+1+n);
+	sort(e+1,e+1+n);
+	for(int i=1;i&lt;=n;i++)
+	{
+		ans+=e[i]-s[i];//加上当前长度 
+		if(i+1&lt;=n)//如果不是最后一条,则有可能与前一条重复 
+		{
+			if(e[i]&gt;s[i+1])//如果重复 
+			{
+				ans-=e[i]-s[i+1];//去掉重复 
+			}
+		}
+	}
+	cout&lt;&lt;ans;
+	return 0;
+} 
+</code></pre>
+<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
+<h4 id="the-end">The end</h4>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/05/02/gMh8InxZfAdjOzv.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/shibingtuji/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2020-05-02">2020-05-02</time>
+                  <h4 class="title white no-margin">剧评 《士兵突击》</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
           </div>
-          </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -325,6 +429,9 @@
     })
 </script>
     
+
+      
+    <script src="https://qwdb.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
