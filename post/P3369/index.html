@@ -109,7 +109,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1588556672220" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1588591726003" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -158,7 +158,7 @@
 <h3 id="2-编程思路">2. 编程思路</h3>
 <p>首先，Treap=Tree+Heap，Tree指的是二叉排序树，Heap则是指堆<br>
 它融合了二叉排序树的优点：操作方便、多样<br>
-同时使用堆结构规避了二叉排序树容易退化成一条链的问题<br>
+同时使用堆结构，和随机值规避了二叉排序树容易退化成一条链的问题<br>
 剩下的看代码吧~<br>
 放心，注释多到<strong>爆炸</strong></p>
 <h3 id="3-ac代码">3. AC代码</h3>
@@ -201,7 +201,7 @@ void cr(int &amp;g,int x)//插入，以g为根，插入x
 		g=++sum;//节点总数加1 
 		size[g]=num[g]=1;//于是有1个节点在树中了,当前节点有1个重复数字
 		v[g]=x;//值为x
-		rd[g]=rand();//生成随机值，拿来维护堆
+		rd[g]=rand();//生成随机值，拿来维护堆，防止退化成链
 		return;
 	}
 	if(v[g]==x)//已有该权值，那么直接个数加加即可
