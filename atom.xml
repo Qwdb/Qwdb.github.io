@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qwdb.github.io</id>
     <title>千文杜博的博客~</title>
-    <updated>2020-05-14T15:02:18.118Z</updated>
+    <updated>2020-05-14T15:05:32.312Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qwdb.github.io"/>
     <link rel="self" href="https://qwdb.github.io/atom.xml"/>
@@ -11,70 +11,70 @@
     <icon>https://qwdb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 千文杜博的博客~</rights>
     <entry>
-        <title type="html"><![CDATA[游记|二妃山漫步]]></title>
+        <title type="html"><![CDATA[游记 | 二妃山漫步]]></title>
         <id>https://qwdb.github.io/post/erfeishanmanbu/</id>
         <link href="https://qwdb.github.io/post/erfeishanmanbu/">
         </link>
         <updated>2020-05-14T05:22:40.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[洛谷 P1496 火烧赤壁 题解]]></title>
+        <title type="html"><![CDATA[题解 | 洛谷 P1496 火烧赤壁 ]]></title>
         <id>https://qwdb.github.io/post/P1496/</id>
         <link href="https://qwdb.github.io/post/P1496/">
         </link>
         <updated>2020-05-03T14:17:39.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[剧评 《士兵突击》]]></title>
+        <title type="html"><![CDATA[剧评 |《士兵突击》]]></title>
         <id>https://qwdb.github.io/post/shibingtuji/</id>
         <link href="https://qwdb.github.io/post/shibingtuji/">
         </link>
         <updated>2020-05-01T16:09:36.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[书评《茶馆》]]></title>
+        <title type="html"><![CDATA[书评 |《茶馆》]]></title>
         <id>https://qwdb.github.io/post/chaguan/</id>
         <link href="https://qwdb.github.io/post/chaguan/">
         </link>
         <updated>2020-05-01T10:11:32.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[洛谷 P1794 装备运输]]></title>
+        <title type="html"><![CDATA[题解 | 洛谷 P1794 装备运输]]></title>
         <id>https://qwdb.github.io/post/P1794/</id>
         <link href="https://qwdb.github.io/post/P1794/">
         </link>
         <updated>2020-04-12T12:51:39.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[啊哈添柴 12722. 差分入门]]></title>
+        <title type="html"><![CDATA[题解 | 啊哈添柴 12722. 差分入门]]></title>
         <id>https://qwdb.github.io/post/12722/</id>
         <link href="https://qwdb.github.io/post/12722/">
         </link>
         <updated>2020-04-12T03:15:21.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[笔记 图论]]></title>
+        <title type="html"><![CDATA[笔记 | 图论]]></title>
         <id>https://qwdb.github.io/post/tl/</id>
         <link href="https://qwdb.github.io/post/tl/">
         </link>
         <updated>2020-04-12T03:12:58.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[笔记 堆与树]]></title>
+        <title type="html"><![CDATA[笔记 | 堆与树]]></title>
         <id>https://qwdb.github.io/post/dys/</id>
         <link href="https://qwdb.github.io/post/dys/">
         </link>
         <updated>2020-04-12T03:08:06.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[洛谷 P1057 传球游戏]]></title>
+        <title type="html"><![CDATA[题解 | 洛谷 P1057 传球游戏]]></title>
         <id>https://qwdb.github.io/post/P1057/</id>
         <link href="https://qwdb.github.io/post/P1057/">
         </link>
         <updated>2020-04-12T03:05:55.000Z</updated>
     </entry>
     <entry>
-        <title type="html"><![CDATA[洛谷 P2799 国王的魔镜]]></title>
+        <title type="html"><![CDATA[题解 | 洛谷 P2799 国王的魔镜]]></title>
         <id>https://qwdb.github.io/post/P2799/</id>
         <link href="https://qwdb.github.io/post/P2799/">
         </link>
