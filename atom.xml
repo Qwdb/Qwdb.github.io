@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qwdb.github.io</id>
     <title>千文杜博的博客~</title>
-    <updated>2020-05-22T05:01:05.090Z</updated>
+    <updated>2020-06-01T14:13:58.821Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qwdb.github.io"/>
     <link rel="self" href="https://qwdb.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://qwdb.github.io/images/avatar.png</logo>
     <icon>https://qwdb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 千文杜博的博客~</rights>
+    <entry>
+        <title type="html"><![CDATA[题解 | 洛谷 P2891 [USACO07OPEN]Dining G]]></title>
+        <id>https://qwdb.github.io/post/Dining G/</id>
+        <link href="https://qwdb.github.io/post/Dining G/">
+        </link>
+        <updated>2020-06-01T14:07:54.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[书评 | 《三体Ⅱ》]]></title>
         <id>https://qwdb.github.io/post/santier/</id>
@@ -72,12 +79,5 @@
         <link href="https://qwdb.github.io/post/tl/">
         </link>
         <updated>2020-04-12T03:12:58.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[笔记 | 堆与树]]></title>
-        <id>https://qwdb.github.io/post/dys/</id>
-        <link href="https://qwdb.github.io/post/dys/">
-        </link>
-        <updated>2020-04-12T03:08:06.000Z</updated>
     </entry>
 </feed>

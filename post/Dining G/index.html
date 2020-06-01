@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>笔记 | 图论 | 千文杜博的博客~</title>
+<title>题解 | 洛谷 P2891 [USACO07OPEN]Dining G | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -15,14 +15,17 @@
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="①最短路
-Floyd 算法
-for(int k=1; k&lt;=n; k++)
-{         
-   for(int i=1; i&lt;=n; i++)
-   {
-        for(int j=1; j&lt;=n; j++..." />
-    <meta name="keywords" content="笔记" />
+    <meta name="description" content="P2891 [USACO07OPEN]Dining G 题解
+难度：⭐⭐⭐⭐
+知识点：最大流
+题目链接
+序言：
+我太难了QwQ，紫题啊！OI第一紫，达成！
+1. 入手程序
+新学习的最大流试一下啊
+后来发现做得第二题就做这题是真心累
+2. 编..." />
+    <meta name="keywords" content="" />
     <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
     <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
@@ -120,23 +123,21 @@ for(int k=1; k&lt;=n; k++)
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/42aVSTIk3oDy6qN.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://file03.16sucai.com/2016/10/1100/16sucai_p20161017118_41e.JPG');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">2 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-06-01"><i class="fa fa-calendar"></i><span class="lately">6 分钟前</span></time>
               
-              <a href="https://qwdb.github.io/post/tl/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/tl/"> </span>
+              <a href="https://qwdb.github.io/post/Dining G/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/Dining G/"> </span>
               </a>
-              <span id="/tl/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/Dining G/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qwdb.github.io/tag/p9T3gxxac/" class="ctag ctag-0 ctag-p9T3gxxac" aria-label="">笔记</a>
-                    
               </div>
-              <h1 class="title ularge white bold">笔记 | 图论</h1>
+              <h1 class="title ularge white bold">题解 | 洛谷 P2891 [USACO07OPEN]Dining G</h1>
             </div>
           </div>
         </div>  
@@ -146,26 +147,162 @@ for(int k=1; k&lt;=n; k++)
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <p>①最短路<br>
-Floyd 算法</p>
-<pre><code class="language-c">for(int k=1; k&lt;=n; k++)
-{         
-   for(int i=1; i&lt;=n; i++)
-   {
-        for(int j=1; j&lt;=n; j++)
+                  <h2 id="p2891-usaco07opendining-g-题解">P2891 [USACO07OPEN]Dining G 题解</h2>
+<p>难度：⭐⭐⭐⭐<br>
+知识点：最大流<br>
+<a href="https://www.luogu.com.cn/problem/P2891">题目链接</a></p>
+<p>序言：</p>
+<p><em>我太难了QwQ，紫题啊！OI第一紫，达成！</em></p>
+<h3 id="1-入手程序">1. 入手程序</h3>
+<p>新学习的最大流<sub>试一下啊</sub><br>
+<s>后来发现做得第二题就做这题是真心累</s></p>
+<h3 id="2-编程思路">2. 编程思路</h3>
+<p>首先，假设你知道怎么做最大流（我会写滴，敬请期待~）<br>
+那我们现在需要的就是把这题的数据转化为最大流的模型。<br>
+下面请看图~<br>
+<img src="https://cdn.luogu.com.cn/upload/image_hosting/rrkzly3x.png" alt="图1" loading="lazy"><br>
+建一个超级源点S，一个超级汇点T，其他值按图上建边，权值都为1</p>
+<p>有人问：</p>
+<pre><code>牛为什么分为入点和出点啊？
+</code></pre>
+<p>如果不分的话，那么就会无法解决一个重大的问题：</p>
+<h2 id="一头牛可能占用多个食物或饮料">一头牛可能占用多个食物或饮料！！！</h2>
+<h3 id="3-ac代码">3. AC代码</h3>
+<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int e[501][501], book[501], s[501], top = 0, n, f,d, flag, ans,z;
+void dfs(int u)
+{
+    if (book[u] == 1)
+        return;
+    book[u] = 1;
+    top++;
+    s[top] = u;
+    if (u == z)
+    {
+        int minv = 999999999;
+        for (int i = 1; i &lt;= top - 1; i++)
         {
-            if(MAP[i][k]+MAP[k][j]&lt;MAP[i][j])
+            //cout &lt;&lt; s[i] &lt;&lt; &quot; &quot;;
+            if (minv &gt; e[s[i]][s[i + 1]])
+                minv = e[s[i]][s[i + 1]];
+        }
+        if (minv != 999999999)
+        {
+            flag = 1;
+            for (int i = 1; i &lt;= top - 1; i++)
             {
-                MAP[i][j]=MAP[i][k]+MAP[k][j];
+                e[s[i]][s[i + 1]] -= minv;
+                e[s[i + 1]][s[i]] += minv;//在反向边上加上减去的流量 
             }
+            ans += minv;//累加所有的流量 
+        }
+        top--;
+        return;
+    }
+    for (int i = 1; i &lt;= z; i++)
+    {
+        if (e[u][i] &gt; 0)
+        {
+            dfs(i);
         }
     }
+    top--;
+    return;
 }
+int main()
+{
+	
+	/*
+	4 3 3
+	2 2 1 2 3 1
+	2 2 2 3 1 2
+	2 2 1 3 1 2
+	2 1 1 3 3
+	*/ 
+    cin &gt;&gt; n &gt;&gt; f &gt;&gt; d;
+    for (int i = 1; i &lt;= n; i++)
+    {
+        int t1,t2,t;
+        cin &gt;&gt; t1 &gt;&gt; t2;
+        for(int j=1;j&lt;=t1;j++)
+        {
+        	cin &gt;&gt; t;
+        	e[t][f+i]=1;
+		}
+		for(int j=1;j&lt;=t2;j++)
+        {
+        	cin &gt;&gt; t;
+        	e[f+n+i][f+2*n+t]=1;
+		}
+    }
+    //源点 
+    for(int i=1;i&lt;=f;i++)
+	{
+		e[0][i]=1;
+	} 
+	//汇点 
+	z=f+2*n+d+1; 
+	for(int i=f+2*n+1;i&lt;=f+2*n+d;i++)
+	{
+		e[i][f+2*n+d+1]=1;
+	}
+	//
+	for(int i=f+1; i&lt;=f+n;i++)
+	{
+		e[i][i+n]=1;
+	} 
+	/*
+	for(int i=0;i&lt;=z;i++)
+	{
+		for(int j=0;j&lt;=z;j++)
+		{
+			if(e[i][j]==1)
+			{
+				cout &lt;&lt; i &lt;&lt; &quot; &quot; &lt;&lt;j &lt;&lt; endl; 
+			}
+		}
+	}
+	*/
+    while (1 &gt; 0)
+    {
+        memset(book, 0, sizeof(book));
+        flag = 0;
+        dfs(0);
+        if (flag == 0)
+            break;
+    }
+    cout &lt;&lt; ans;
+    return 0;
+}
+/*
+0 1
+0 2
+0 3
+1 4
+1 6
+1 7
+2 4
+2 5
+3 5
+3 6
+3 7
+4 8
+5 9
+6 10
+7 11
+8 12
+8 14
+9 12
+9 13
+10 12
+10 13
+11 14
+12 15
+13 15
+14 15
+*/
 </code></pre>
-<p>②图<br>
-连通性 ：两点之间是否有关系</p>
-<p>有向性 ：关系有方向</p>
-<h4 id="未完待续~如果有dalao有补充欢迎评论补充">未完待续~（如果有dalao有补充欢迎评论补充）</h4>
 <h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
 <h4 id="the-end">The end</h4>
 
@@ -177,26 +314,13 @@ Floyd 算法</p>
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/12722/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">题解 | 啊哈添柴 12722. 差分入门</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/03/28/wngadBfAO8lErhU.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/dys/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=917538534,3719444123&amp;fm=26&amp;gp=0.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/santier/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">笔记 | 堆与树</h4>
+                  <time datetime="2020-05-22">2020-05-22</time>
+                  <h4 class="title white no-margin">书评 | 《三体Ⅱ》</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
