@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://qwdb.github.io</id>
     <title>千文杜博的博客~</title>
-    <updated>2020-06-10T12:57:52.105Z</updated>
+    <updated>2020-07-17T15:05:07.040Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://qwdb.github.io"/>
     <link rel="self" href="https://qwdb.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://qwdb.github.io/images/avatar.png</logo>
     <icon>https://qwdb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 千文杜博的博客~</rights>
+    <entry>
+        <title type="html"><![CDATA[索引 | 算法索引]]></title>
+        <id>https://qwdb.github.io/post/tijiesuoyin/</id>
+        <link href="https://qwdb.github.io/post/tijiesuoyin/">
+        </link>
+        <updated>2020-07-17T14:25:49.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[游记 | 6.1 儿童节八分山之行]]></title>
         <id>https://qwdb.github.io/post/ertongjiebafenshanzhixing/</id>
@@ -72,12 +79,5 @@
         <link href="https://qwdb.github.io/post/P1794/">
         </link>
         <updated>2020-04-12T12:51:39.000Z</updated>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[题解 | 啊哈添柴 12722. 差分入门]]></title>
-        <id>https://qwdb.github.io/post/12722/</id>
-        <link href="https://qwdb.github.io/post/12722/">
-        </link>
-        <updated>2020-04-12T03:15:21.000Z</updated>
     </entry>
 </feed>
