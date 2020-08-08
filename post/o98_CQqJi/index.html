@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>题解 | 啊哈添柴 12722. 差分入门 | 千文杜博的博客~</title>
+<title>暂时关闭通知 | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://qwdb.github.io/styles/main.css">
@@ -15,16 +15,15 @@
 <script src="https://qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://qwdb.github.io/media/js/functions.js"></script>
     <meta name="referrer" content="never">
-    <meta name="description" content="12722. 差分入门 题解
-难度：⭐⭐⭐⭐
-知识点：差分
-题目链接
-序言：
-第一次写在添柴上的题的题解，嗯嗯呃呃....
-1. 入手程序
-这道题可以约等于一个裸题，就是一个基本的区间修改题目，连查询都不需要！
-但这道题的数据不小，不能直接..." />
-    <meta name="keywords" content="啊哈添柴" />
+    <meta name="description" content="反正没人看
+写随意一点
+阿巴阿巴
+出去旅游～
+7天左右
+不会管这里
+QwQ
+..." />
+    <meta name="keywords" content="" />
     <script src="https://qwdb.github.io/media/js/waterfall.min.js"></script>
     <script src="https://qwdb.github.io/media/js/prism.min.js"></script>
   </head>
@@ -122,23 +121,21 @@
       <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
         <div class="center content">
-          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2020/04/02/nWENsoOS3ZUDfpe.jpg');">
+          <div class="featured-image cover" style="background-image: url('https://cdn.luogu.com.cn/upload/image_hosting/ii1nqka3.png');">
             <div class="meta top"> 
-              <time class="meta-info" style="float:left;" datetime="2020-04-12"><i class="fa fa-calendar"></i><span class="lately">4 个月前</span></time>
+              <time class="meta-info" style="float:left;" datetime="2020-08-08"><i class="fa fa-calendar"></i><span class="lately">4 分钟前</span></time>
               
-              <a href="https://qwdb.github.io/post/12722/#comments" class="comments meta-info" title="">
-                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/12722/"> </span>
+              <a href="https://qwdb.github.io/post/o98_CQqJi/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/o98_CQqJi/"> </span>
               </a>
-              <span id="/12722/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              <span id="/o98_CQqJi/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
               
             </div>
             <div class="info">
               <div class="tags ">
                 
-                      <a href="https://qwdb.github.io/tag/zvYj9NviR/" class="ctag ctag-0 ctag-zvYj9NviR" aria-label="">啊哈添柴</a>
-                    
               </div>
-              <h1 class="title ularge white bold">题解 | 啊哈添柴 12722. 差分入门</h1>
+              <h1 class="title ularge white bold">暂时关闭通知</h1>
             </div>
           </div>
         </div>  
@@ -148,86 +145,13 @@
             <article class="main-article post">
               <section class="post-content">
                 <div class="text">
-                  <h2 id="12722-差分入门-题解">12722. 差分入门 题解</h2>
-<p>难度：⭐⭐⭐⭐<br>
-知识点：差分<br>
-<a href="https://www.acoj.com/problems/12722">题目链接</a></p>
-<p>序言：</p>
-<p><em>第一次写在添柴上的题的题解，嗯嗯呃呃....</em></p>
-<h3 id="1-入手程序">1. 入手程序</h3>
-<p>这道题可以约等于一个裸题，就是一个基本的区间修改题目，连查询都不需要！</p>
-<p>但这道题的数据不小，不能直接一个数组直接进行该动，可以作为差分的入门题~</p>
-<h3 id="2-编程思路">2. 编程思路</h3>
-<p>神马是差分呢？差分指的是每一次改动不直接影响结果，而是把改动存储在一个临时空间中。</p>
-<p>比如这一题，不把每次的改动直接放在答案数组a里，而是放在差分数组k里</p>
-<p>（然后这样再那样在布拉布拉。。。。）</p>
-<p>好吧，我承认老师讲的这一段真的很难懂</p>
-<p>那我来用样例说明一下</p>
-<p>开始时a数组为：1 5 7 3 6 9</p>
-<p>实际变化过程为：<br>
-1 5 7 3 6 9</p>
-<p>1 5 7 6 9 12</p>
-<p>1 6 8 7 10 12</p>
-<p>1 6 10 9 12 14</p>
-<p>k[i]初始化为a[1],k [i]初始化为a[i]-a[i-1]</p>
-<pre><code class="language-c">f[i]=a[i]-a[i-1];
-</code></pre>
-<p>结果为：1，4，2，-4，3，3</p>
-<p>第一个步骤：第四到第六位加3</p>
-<p>k对应操作：第四位+3，第七位-3（当然，本样例没有第七位）</p>
-<p>第二个步骤：第二到第五位加1</p>
-<p>k对应操作：第二位+1，第六位-3</p>
-<p>第三个步骤：第三到第六位加2</p>
-<p>k对应操作：第三位+2，第七位-2（同上）</p>
-<p>代码就是：</p>
-<pre><code class="language-c">f[A]+=C;
-if(B!=n)
-{
-	f[B+1]-=C;
-}
-</code></pre>
-<p>最后不要忘了k数组要逐位加到a数组上哦~</p>
-<h3 id="3-ac代码">3. AC代码</h3>
-<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-int n,m;
-int A,B,C;
-int a[100005],f[100005];
-int main()
-{
-	cin&gt;&gt;n;
-	for(int i=1;i&lt;=n;i++)
-	{
-		cin&gt;&gt;a[i];
-	}
-	for(int i=1;i&lt;=n;i++)
-	{
-		f[i]=a[i]-a[i-1];
-	}
-	cin&gt;&gt;m;
-	for(int i=1;i&lt;=m;i++)
-	{
-		cin&gt;&gt;A&gt;&gt;B&gt;&gt;C;
-		if(A&gt;B)
-		{
-			swap(A,B);
-		}
-		f[A]+=C;
-		if(B!=n)
-		{
-			f[B+1]-=C;
-		}
-	}
-	for(int i=1;i&lt;=n;i++)
-	{
-		a[i]=a[i-1]+f[i];
-		cout&lt;&lt;a[i]&lt;&lt;&quot; &quot;;
-	}
-	return 0;
-} 
-</code></pre>
-<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
-<h4 id="the-end">The end</h4>
+                  <h4 id="反正没人看">反正没人看</h4>
+<h4 id="写随意一点">写随意一点</h4>
+<h4 id="阿巴阿巴">阿巴阿巴</h4>
+<h4 id="出去旅游~">出去旅游～</h4>
+<h4 id="7天左右">7天左右</h4>
+<h4 id="不会管这里">不会管这里</h4>
+<h4 id="qwq">QwQ</h4>
 
                 </div>
                 <div class="clear"></div>
@@ -237,26 +161,13 @@ int main()
 
             <section class="related section">
               
-              <article class="prev grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/12/zMPbEkmx7S9cD5j.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/P1794/" class="full-link"></a>
-                 <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">题解 | 洛谷 P1794 装备运输</h4>
-                </div>
-                 <span class="epcl-button red">
-                  <img src="https://qwdb.github.io/media/images/left-arrow.svg" width="15" alt="Left Arrow">
-                </span>
-                <div class="overlay"></div>
-              </article>
-              
               
               <article class="next grid-50 tablet-grid-50 grid-parent">
-                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2020/04/02/42aVSTIk3oDy6qN.jpg');"></div>
-                 <a href="https://qwdb.github.io/post/tl/" class="full-link"></a>
+                <div class="thumb cover lazy loaded" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595008322297&amp;di=3f3311c8e2dc210d75d9c366f086bebd&amp;imgtype=0&amp;src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F11%2F14%2F86836512022ec32c09984c3c8420cbd4.jpg');"></div>
+                 <a href="https://qwdb.github.io/post/tijiesuoyin/" class="full-link"></a>
                  <div class="info">
-                  <time datetime="2020-04-12">2020-04-12</time>
-                  <h4 class="title white no-margin">笔记 | 图论</h4>
+                  <time datetime="2020-07-17">2020-07-17</time>
+                  <h4 class="title white no-margin">索引 | 算法索引</h4>
                 </div>
                  <span class="epcl-button red">
                   <img src="https://qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
