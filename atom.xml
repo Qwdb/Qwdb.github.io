@@ -1,82 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://qwdb.github.io</id>
+    <id>https://Qwdb.github.io</id>
     <title>千文杜博的博客~</title>
-    <updated>2020-08-08T15:18:02.878Z</updated>
+    <updated>2020-08-16T12:21:28.214Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://qwdb.github.io"/>
-    <link rel="self" href="https://qwdb.github.io/atom.xml"/>
+    <link rel="alternate" href="https://Qwdb.github.io"/>
+    <link rel="self" href="https://Qwdb.github.io/atom.xml"/>
     <subtitle>并非所有流浪者，都迷失了自我！</subtitle>
-    <logo>https://qwdb.github.io/images/avatar.png</logo>
-    <icon>https://qwdb.github.io/favicon.ico</icon>
+    <logo>https://Qwdb.github.io/images/avatar.png</logo>
+    <icon>https://Qwdb.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 千文杜博的博客~</rights>
     <entry>
         <title type="html"><![CDATA[暂时关闭通知]]></title>
-        <id>https://qwdb.github.io/post/o98_CQqJi/</id>
-        <link href="https://qwdb.github.io/post/o98_CQqJi/">
+        <id>https://Qwdb.github.io/post/o98_CQqJi/</id>
+        <link href="https://Qwdb.github.io/post/o98_CQqJi/">
         </link>
         <updated>2020-08-08T14:39:28.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[索引 | 算法索引]]></title>
-        <id>https://qwdb.github.io/post/tijiesuoyin/</id>
-        <link href="https://qwdb.github.io/post/tijiesuoyin/">
+        <id>https://Qwdb.github.io/post/tijiesuoyin/</id>
+        <link href="https://Qwdb.github.io/post/tijiesuoyin/">
         </link>
         <updated>2020-07-17T14:25:49.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[游记 | 6.1 儿童节八分山之行]]></title>
-        <id>https://qwdb.github.io/post/ertongjiebafenshanzhixing/</id>
-        <link href="https://qwdb.github.io/post/ertongjiebafenshanzhixing/">
+        <id>https://Qwdb.github.io/post/ertongjiebafenshanzhixing/</id>
+        <link href="https://Qwdb.github.io/post/ertongjiebafenshanzhixing/">
         </link>
         <updated>2020-06-10T11:22:28.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 | 洛谷 P2891 [USACO07OPEN]Dining G]]></title>
-        <id>https://qwdb.github.io/post/Dining G/</id>
-        <link href="https://qwdb.github.io/post/Dining G/">
+        <id>https://Qwdb.github.io/post/Dining G/</id>
+        <link href="https://Qwdb.github.io/post/Dining G/">
         </link>
         <updated>2020-06-01T14:07:54.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[书评 | 《三体Ⅱ》]]></title>
-        <id>https://qwdb.github.io/post/santier/</id>
-        <link href="https://qwdb.github.io/post/santier/">
+        <id>https://Qwdb.github.io/post/santier/</id>
+        <link href="https://Qwdb.github.io/post/santier/">
         </link>
         <updated>2020-05-22T04:55:06.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[书评 | 《三体》]]></title>
-        <id>https://qwdb.github.io/post/santi/</id>
-        <link href="https://qwdb.github.io/post/santi/">
+        <id>https://Qwdb.github.io/post/santi/</id>
+        <link href="https://Qwdb.github.io/post/santi/">
         </link>
         <updated>2020-05-21T05:17:06.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[游记 | 5.3 二妃山漫步]]></title>
-        <id>https://qwdb.github.io/post/erfeishanmanbu/</id>
-        <link href="https://qwdb.github.io/post/erfeishanmanbu/">
+        <id>https://Qwdb.github.io/post/erfeishanmanbu/</id>
+        <link href="https://Qwdb.github.io/post/erfeishanmanbu/">
         </link>
         <updated>2020-05-14T05:22:40.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[题解 | 洛谷 P1496 火烧赤壁 ]]></title>
-        <id>https://qwdb.github.io/post/P1496/</id>
-        <link href="https://qwdb.github.io/post/P1496/">
+        <id>https://Qwdb.github.io/post/P1496/</id>
+        <link href="https://Qwdb.github.io/post/P1496/">
         </link>
         <updated>2020-05-03T14:17:39.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[剧评 |《士兵突击》]]></title>
-        <id>https://qwdb.github.io/post/shibingtuji/</id>
-        <link href="https://qwdb.github.io/post/shibingtuji/">
+        <id>https://Qwdb.github.io/post/shibingtuji/</id>
+        <link href="https://Qwdb.github.io/post/shibingtuji/">
         </link>
         <updated>2020-05-01T16:09:36.000Z</updated>
     </entry>
     <entry>
         <title type="html"><![CDATA[书评 |《茶馆》]]></title>
-        <id>https://qwdb.github.io/post/chaguan/</id>
-        <link href="https://qwdb.github.io/post/chaguan/">
+        <id>https://Qwdb.github.io/post/chaguan/</id>
+        <link href="https://Qwdb.github.io/post/chaguan/">
         </link>
         <updated>2020-05-01T10:11:32.000Z</updated>
     </entry>
