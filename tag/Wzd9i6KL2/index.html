@@ -1,346 +1,587 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+<link rel="stylesheet" href="https://Qwdb.github.io/media/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://Qwdb.github.io/media/css/live2d.css">
+<link rel="stylesheet" href="https://Qwdb.github.io/styles/main.css">
+<title>千文杜博的博客~</title>
 
-<head>
-    <meta charset="UTF-8" />
-<title>索引 - 千文杜博的博客~</title>
-<meta name="description" content="并非所有流浪者，都迷失了自我！">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
-<link type='text/css' rel='stylesheet' href='https://Qwdb.github.io/styles/main.css' media='screen' />
-<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/KaTeX/0.11.1/katex.min.css">
-<link type="text/css" rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<body>
+    <!-- 响应式布局，针对PC端内容显示 -->
+    <div id="content">
+        <div class="nav-large">
+            <div class="row">
+                
+                <div class="side"><body>
+    
+    <div id=side>
+        <div class="avatar-border">
+            <img src="https://Qwdb.github.io/images/avatar.png?v=1598436734051" class="avatar">
+        </div>
+        <div class="sitename">千文杜博的博客~</div>
+        <span class="describtion" data-text='["并非所有流浪者，都迷失了自我！"]'>&nbsp;</span>
+        
+        <div class="search">
+            <!-- <input type="text" class="search-input" placeholder="标题搜索(●'◡'●)" /> -->
+            <input type="text" class="search-input" placeholder="标题搜索 ⚆_⚆ つ♡">
+            <div class="search-results"></div>
+        </div>
+        
+    <div class="share-button">
+        <span>社交按钮</span>
+        
+        
+        
+        
+        
+        
+    </div>
+    <div id="qq" style="display:none"></div>
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/archives" class="menubutton">
+            文章
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="/tags" class="menubutton">
+            标签
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/post/about" class="menubutton">
+            关于
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/friends" class="mchocie describtion" target="_blank">
+            友链
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/post/gy" class="menubutton">
+            格言
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/post/fz" class="mchocie describtion" target="_blank">
+            分站
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/books" class="mchocie describtion" target="_blank">
+            阅读
+        </a>
+    </div>
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://qwdb.github.io/movies" class="mchocie describtion" target="_blank">
+            观影
+        </a>
+    </div>
+    
+    
+    
+    
+    <div class="mchocie describtion">
+        <a href="https://Qwdb.github.io/friends" class="menubutton">友人帐</a>
+    </div>
+    
+    <hr>
+    <div id="footinfo">本站基于<a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>搭建，强烈安利哦～ | Theme: <a
+        href="https://github.com/850552586/gridea-theme-fog">Fog</a></div>
+    
+    <div id="sitegotimeDate">载入天数...</div>
+    <div id="sitegotimes">载入时分秒...</div>
+    <div id="cussitetime" style="display:none">02/02/2020</div>
+    
+    
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <div id="vistornum">
+        <span id="busuanzi_container_site_uv">
+            <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i> 总访问量:<span id="busuanzi_value_site_pv"></span>&nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa fa-user-o" aria-hidden="true"></i> 访问人数:<span id="busuanzi_value_site_uv"></span>
+        </span>
+    </div>
+    <div style="color:white"> </div>
+    
+    </div>
 
-<script type="text/javascript" src='https://Qwdb.github.io/media/scripts/jquery.js'></script>
-<script type="text/javascript" src="https://cdn.bootcss.com/highlight.js/9.15.10/highlight.min.js"></script>
+
+<script src="https://Qwdb.github.io/media/js/wordshow.js"></script>
+    
+    <script>
+        //----------------------站点运行时间
+        var now = new Date();
+
+        function createtime() {
+            var sitegotime = document.getElementById("cussitetime").innerHTML + " 00:00:00";
+            var grt = new Date(sitegotime); //此处修改你的建站时间或者网站上线时间
+            now.setTime(now.getTime() + 250);
+            days = (now - grt) / 1000 / 60 / 60 / 24;
+            dnum = Math.floor(days);
+            hours = (now - grt) / 1000 / 60 / 60 - (24 * dnum);
+            hnum = Math.floor(hours);
+            if (String(hnum).length == 1) {
+                hnum = "0" + hnum;
+            }
+            minutes = (now - grt) / 1000 / 60 - (24 * 60 * dnum) - (60 * hnum);
+            mnum = Math.floor(minutes);
+            if (String(mnum).length == 1) {
+                mnum = "0" + mnum;
+            }
+            seconds = (now - grt) / 1000 - (24 * 60 * 60 * dnum) - (60 * 60 * hnum) - (60 * mnum);
+            snum = Math.round(seconds);
+            if (String(snum).length == 1) {
+                snum = "0" + snum;
+            }
+            document.getElementById("sitegotimeDate").innerHTML = "本站已安全运行 " + dnum + " 天 ";
+            document.getElementById("sitegotimes").innerHTML = hnum + " 小时 " + mnum + " 分 " + snum + " 秒";
+        }
+        setInterval("createtime()", 250);
+    </script>
+    
+
+
+
+
+    
+</body>
+<script>
+    //-------------------------------------------------搜索
+    // 获取搜索框、搜索按钮、清空搜索、结果输出对应的元素
+    var searchInput = document.querySelector('.search-input');
+    var searchResults = document.querySelector('.search-results');
+
+    // 申明保存文章的标题、链接、内容的数组变量
+    var searchValue = '',
+        arrItems = [],
+        arrLinks = [],
+        arrTitles = [],
+        arrResults = [],
+        indexItem = [],
+        itemLength = 0;
+    var tmpDiv = document.createElement('div');
+    tmpDiv.className = 'result-item';
+
+    // ajax 的兼容写法
+    var xhr = new XMLHttpRequest() || new ActiveXObject('Microsoft.XMLHTTP');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            xml = xhr.responseXML;
+            arrItems = xml.getElementsByTagName('entry');
+            itemLength = arrItems.length;
+            // 遍历并保存所有文章对应的标题、链接、内容到对应的数组中
+            // 同时过滤掉 HTML 标签
+            for (i = 0; i < itemLength; i++) {
+                var link = arrItems[i].getElementsByTagName('link')[0];
+                arrLinks[i] = link.getAttribute("href");
+                arrTitles[i] = arrItems[i].getElementsByTagName('title')[0].
+                childNodes[0].nodeValue.replace(/<.*?>/g, '');
+            }
+        }
+    }
+
+    // 开始获取根目录下 feed.xml 文件内的数据
+    xhr.open('get', '/atom.xml', true);
+    xhr.send();
+
+
+
+    // 输入框内容变化后就开始匹配，可以不用点按钮
+    // 经测试，onkeydown, onchange 等方法效果不太理想，
+    // 存在输入延迟等问题，最后发现触发 input 事件最理想，
+    // 并且可以处理中文输入法拼写的变化
+    searchInput.oninput = function () {
+        setTimeout(searchConfirm, 0);
+    }
+    searchInput.onfocus = function () {
+        searchResults.style.display = 'block';
+    }
+
+    function searchConfirm() {
+        if (searchInput.value == '') {
+            searchResults.style.display = 'none';
+        } else if (searchInput.value.search(/^\s+$/) >= 0) {
+            // 检测输入值全是空白的情况
+            searchInit();
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '请输入有效内容...';
+            searchResults.appendChild(itemDiv);
+        } else {
+            // 合法输入值的情况
+            searchInit();
+            searchValue = searchInput.value;
+            // 在标题、内容中查找
+            searchMatching(arrTitles, searchValue);
+        }
+    }
+
+    // 每次搜索完成后的初始化
+    function searchInit() {
+        arrResults = [];
+        indexItem = [];
+        searchResults.innerHTML = '';
+        searchResults.style.display = 'block';
+    }
+
+    function searchMatching(arr1, input) {
+        // 忽略输入大小写
+        input = new RegExp(input, 'i');
+        // 在所有文章标题、内容中匹配查询值
+        for (i = 0; i < itemLength; i++) {
+            if (arr1[i].search(input) !== -1) {
+                var arr = arr1;
+                indexItem.push(i); // 保存匹配值的索引
+                var indexContent = arr[i].search(input);
+                // 此时 input 为 RegExp 格式 /input/i，转换为原 input 字符串长度
+                var l = input.toString().length - 3;
+                var step = 10;
+
+                // 将匹配到内容的地方进行黄色标记，并包括周围一定数量的文本
+                arrResults.push(arr[i].slice(indexContent - step, indexContent));
+            }
+        }
+
+        // 输出总共匹配到的数目
+        var totalDiv = tmpDiv.cloneNode(true);
+        totalDiv.innerHTML = '<b>总匹配：' + indexItem.length + ' 项<hr></b>';
+        searchResults.appendChild(totalDiv);
+
+        // 未匹配到内容的情况
+        if (indexItem.length == 0) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerText = '未匹配到内容...';
+            searchResults.appendChild(itemDiv);
+        }
+
+        // 将所有匹配内容进行组合
+        for (i = 0; i < arrResults.length; i++) {
+            var itemDiv = tmpDiv.cloneNode(true);
+            itemDiv.innerHTML = '<b>[' + arrTitles[indexItem[i]] +
+                ']</b><p>' + arrResults[i] + "</p><hr />";
+            itemDiv.setAttribute('onclick', 'changeHref(arrLinks[indexItem[' + i + ']])');
+            searchResults.appendChild(itemDiv);
+        }
+    }
+
+    function changeHref(href) {
+        location.href = href;
+    }
+
+    function showqq() {
+        var qq = document.getElementById("qq").innerHTML;
+        if (qq != '')
+            window.location.href = "tencent://message/?uin=" + qq + "&Site=&Menu=yes";
+        else
+            alert("博主暂未设置QQ联系方式");
+    }
+</script>
+</div>
+                <div id="main" class="col-xs-12 col-sm-7">
+                    <link rel="stylesheet" href="https://Qwdb.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595008322297&amp;di=3f3311c8e2dc210d75d9c366f086bebd&amp;imgtype=0&amp;src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F11%2F14%2F86836512022ec32c09984c3c8420cbd4.jpg" class="postimage"
+                onclick="window.location.href= 'https://Qwdb.github.io/post/tijiesuoyin/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://Qwdb.github.io/post/tijiesuoyin/';return false">
+                    索引 | 算法索引
+                </div>
+            </div>
+        </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-07-17</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+            <div class="posttag">
+                
+                <a href="https://Qwdb.github.io/tag/Wzd9i6KL2/" class="postlink">
+                    <i class="fa fa-tag"></i> 索引
+                </a>
+                
+            </div>
+        </div>
+        
+</div>
+
+</div>
+                    <div>
+                        <div class="pagi">
+    <ul>
+        
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+                <li><a id="page1">1</a></li>
+                <li><a id="page2" class="active">2</a></li>
+                <li><a id="page3">3</a></li>
+                
+        <li><a style="width:100px">&nbsp;</a></li>
+        
+            </ul>
+</div>
+
+<div id="pagination-prev" style="display:none"> 
+</div>
+<div id="pagination-next" style="display:none"> </div>
+
 
 <script>
-    hljs.initHighlightingOnLoad();
+    var prevstr = document.getElementById("pagination-prev").innerHTML;
+    var nextstr = document.getElementById("pagination-next").innerHTML;
+    var page1 = document.getElementById("page1");
+    var page2 = document.getElementById("page2");
+    var page3 = document.getElementById("page3");
+    page1.innerHTML = '-';
+    page2.innerHTML = '1';
+    page3.innerHTML = '-';
+    if (prevstr.length > 5) {
+        if (prevstr.indexOf("page/") != -1) {
+            var prevnum = parseInt(prevstr.split("page/")[1]);
+            page1.innerHTML = prevnum;
+            page2.innerHTML = prevnum + 1;
+        } else {
+            page1.innerHTML = 1;
+            page2.innerHTML = 2;
+        }
+    }
+    if (nextstr.indexOf("page/") != -1) {
+        var nextnum = parseInt(nextstr.split("page/")[1]);
+        page3.innerHTML = nextnum;
+        page2.innerHTML = nextnum - 1;
+    }
 </script>
+                        <div style="padding-bottom:10%"></div>
+                    </div>
+                </div>
+                <div class="col-xs-6 col-sm-2"></div>
+                
+            </div>
+            
+        </div>
+        <div id="bg">
+        </div>
+        <div id="bgchoice" style="display: none">
+            </div>
+            
+            <div id="bgurl" style="display:none"></div>
+               
+    </div>
+
+
+    <!-- 响应式布局，针对手机端内容显示 -->
+    <div class="nav-small">
+        <head>
+  <!-- 引入Bootstrap核心样式文件 -->
+  <link rel="stylesheet" href="https://Qwdb.github.io/media/css/bootstrap.min.css">
 </head>
 
 <body>
-
-    <div class="layout theme-dark">
-
-        <div class="layout-header">
-
-	<div class="layout-header-main">
-		<div class="container">
-			<div class="row justify-content-lg-center">
-				<div class="col-12 col-lg-9">
-
-					<div class="navbar">
-
-						<div class="logo">
-							<a href="https://Qwdb.github.io">
-								<img class="logo"
-									src="https://Qwdb.github.io/media/images/site_avatar.png?v=1598262820222"
-									alt="">
-							</a>
-						</div>
-
-						<div class="menu d-md-inline-block d-none">
-							<ul class="layout-navigation-list">
-								
-								<li class="layout-navigation-item"><a title="文章"
-										href="https://qwdb.github.io/archives">文章</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="标签"
-										href="/tags">标签</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="关于"
-										href="https://qwdb.github.io/post/about">关于</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="友链"
-										href="https://qwdb.github.io/friends">友链</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="格言"
-										href="https://qwdb.github.io/post/gy">格言</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="分站"
-										href="https://qwdb.github.io/post/fz">分站</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="阅读"
-										href="https://qwdb.github.io/books">阅读</a>
-								</li>
-								
-								<li class="layout-navigation-item"><a title="观影"
-										href="https://qwdb.github.io/movies">观影</a>
-								</li>
-								
-							</ul>
-						</div>
-
-						<div class="item d-md-inline-block d-none">
-							<div class="search-icon">
-								<i class="fa fa-search" aria-hidden="true"></i>
-							</div>
-						</div>
-
-
-
-						<div class="d-md-inline-block d-none">
-							<div class="search-lightbox">
-								<div class="search-body">
-
-									<form id="gridea-search-form" data-update="1598262820222" action="/search/" class="search-form">
-										<input type="text" name="q" id="s" value="" class="search-field" placeholder="请输入搜索关键词" aria-label="请输入搜索关键词" required="">
-										<button type="submit" class="submit" aria-label="Submit">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</form>
-
-								</div>
-							</div>
-						</div>
-
-						<div class="nav d-md-none d-inline-block">
-							<div class="trigger">
-								<i class="fa fa-bars layout-btn-toggle" aria-hidden="true"></i>
-							</div>
-						</div>
-
-					</div>
-
-				</div>
-			</div>
-
-
-
-
-		</div>
-	</div>
-
-</div>
-
-        <div class="layout-collapse d-md-none">
-	<div class="layout-collapse-main">
-		<ul class="layout-collapse-list">
-			
-			<li class="layout-collapse-item"><a title="文章" href="https://qwdb.github.io/archives">文章</a></li>
-			
-			<li class="layout-collapse-item"><a title="标签" href="/tags">标签</a></li>
-			
-			<li class="layout-collapse-item"><a title="关于" href="https://qwdb.github.io/post/about">关于</a></li>
-			
-			<li class="layout-collapse-item"><a title="友链" href="https://qwdb.github.io/friends">友链</a></li>
-			
-			<li class="layout-collapse-item"><a title="格言" href="https://qwdb.github.io/post/gy">格言</a></li>
-			
-			<li class="layout-collapse-item"><a title="分站" href="https://qwdb.github.io/post/fz">分站</a></li>
-			
-			<li class="layout-collapse-item"><a title="阅读" href="https://qwdb.github.io/books">阅读</a></li>
-			
-			<li class="layout-collapse-item"><a title="观影" href="https://qwdb.github.io/movies">观影</a></li>
-			
-
-		</ul>
-	</div>
-</div>
-
-        
-
-<div class="layout-nav" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595008322297&amp;di=3f3311c8e2dc210d75d9c366f086bebd&amp;imgtype=0&amp;src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F11%2F14%2F86836512022ec32c09984c3c8420cbd4.jpg')">
-  <div class="container">
-    <div class="row justify-content-lg-center">
-      <div class="col-12 col-lg-9">
-        <div class="nav-content">
-          <h1>索引</h1>
-          <div class="sub-title"># 标签</div>
-        </div>
+  <nav class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container-fluid">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+          data-target="#barmenu" aria-expanded="false" id="barbutton">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="https://Qwdb.github.io">千文杜博的博客~&nbsp;&nbsp;|</a>
       </div>
-    </div>
 
-  </div>
-</div>
-
-
-        <div class="layout-content">
-  <div class="layout-content-main">
-    <div class="container">
-      <div class="row justify-content-lg-center">
-        <div class="col-12 col-lg-9">
-          <div class="card-list">
-            
-            
-            <article class="card">
-              <div class="card-item row">
-                
-                <div class="card-content col-8 col-lg-9">
-                  <div class="card-body">
-                    <div class="header">
-                      <a class="title" href="https://Qwdb.github.io/post/tijiesuoyin/">
-                        <h3>索引 | 算法索引</h3>
-                      </a>
-                    </div>
-                    <div class="inner d-none d-sm-block">
-                      <div class="abstract">
-                        
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card-footer">
-                    <div class="item">
-                      
-                      <a href="https://Qwdb.github.io/tag/Wzd9i6KL2/" class="tag" data-title="索引">
-                        索引
-                      </a>
-                      
-                    </div>
-                    <div class="item">2020-07-17</div>
-                  </div>
-                </div>
-                <div class="card-thumb col-4 col-lg-3">
-                  <div class="thumb">
-                    <a href="https://Qwdb.github.io/post/tijiesuoyin/" style="background-image: url('https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595008322297&amp;di=3f3311c8e2dc210d75d9c366f086bebd&amp;imgtype=0&amp;src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F11%2F14%2F86836512022ec32c09984c3c8420cbd4.jpg')"></a>
-                  </div>
-                </div>
-                
-              </div>
-            </article>
-            
-            
-          </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="barmenu">
+        <ul class="nav navbar-nav">
+          
+          
+          <li>
+            <a href="https://qwdb.github.io/archives">
+              文章
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="/tags">
+              标签
+            </a>
+          </li>
+          
+          
+          
+          <li>
+            <a href="https://qwdb.github.io/post/about">
+              关于
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://qwdb.github.io/friends" target="_blank">
+              友链
+            </a></li>
+          
+          
+          
+          <li>
+            <a href="https://qwdb.github.io/post/gy">
+              格言
+            </a>
+          </li>
+          
+          
+          
+          <li><a href="https://qwdb.github.io/post/fz" target="_blank">
+              分站
+            </a></li>
+          
+          
+          
+          <li><a href="https://qwdb.github.io/books" target="_blank">
+              阅读
+            </a></li>
+          
+          
+          
+          <li><a href="https://qwdb.github.io/movies" target="_blank">
+              观影
+            </a></li>
+          
+          
+          
+          
+          <li><a href="https://Qwdb.github.io/friends">友链</a></li>
 
           
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
 
+
+  <!-- 引入jQuery核心js文件 -->
+  <script src="http://cdn.static.runoob.com/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script>
+  var btstate = false;
+  var bt = $("#barbutton");
+  var bm = $("#barmenu");
+  bt.click(function(){
+    dropdown();
+  })
+  function dropdown(){
+    console.log(btstate);
+    //下拉
+    if(btstate==false){
+      bt.removeClass("collapsed");
+      bt.attr("aria-expanded","true");
+      bm.attr("aria-expanded","true")
+      bm.fadeIn(700);
+      btstate = true;
+    }
+    else{
+      bt.addClass("collapsed");
+      bt.attr("aria-expanded","false");
+      bm.removeClass("in");
+      bm.hide();
+      bm.attr("aria-expanded","false");
+      btstate = false;
+    }
+  }
+  </script> 
+</body>
+            <div style="margin-top:50px"></div>
+            <link rel="stylesheet" href="https://Qwdb.github.io/media/css/font-awesome.css">
+<div class="tag-container">
+    
+    <div class="postshow">
+        
+        <div id="post" style="width:100%">
+            <img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1595008322297&amp;di=3f3311c8e2dc210d75d9c366f086bebd&amp;imgtype=0&amp;src=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F16%2F11%2F14%2F86836512022ec32c09984c3c8420cbd4.jpg" class="postimage"
+                onclick="window.location.href= 'https://Qwdb.github.io/post/tijiesuoyin/';return false">
+            <div class="posttitlebox">
+                <div class="posttitle" onclick="window.location.href= 'https://Qwdb.github.io/post/tijiesuoyin/';return false">
+                    索引 | 算法索引
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
+        <div class="postinfo">
+            <div class="postdate"><i class="fa fa-calendar"></i>2020-07-17</div>
+            <div class="poststatus postdate"><i class="fa fa-clock-o"></i> 1 min read</div>
+            <div class="posttag">
+                
+                <a href="https://Qwdb.github.io/tag/Wzd9i6KL2/" class="postlink">
+                    <i class="fa fa-tag"></i> 索引
+                </a>
+                
+            </div>
+        </div>
+        
 </div>
 
-
-<script type="text/javascript">
-  //点击加载更多
-  jQuery(document).ready(function ($) {
-    //点击下一页的链接(即那个a标签)
-    $(' .btn-paginator').click(function () {
-      $this = $(this);
-      $this.addClass('loading').text('正在加载'); //给a标签加载一个loading的class属性，用来添加加载效果
-      var href = $this.attr('href'); //获取下一页的链接地址
-      if (href != undefined) { //如果地址存在
-        $.ajax({ //发起ajax请求
-          url: href,
-          //请求的地址就是下一页的链接
-          type: 'get',
-          //请求类型是get
-          error: function (request) {
-            //如果发生错误怎么处理
-          },
-          success: function (data) { //请求成功
-            $this.removeClass('loading').text('加载更多'); //移除loading属性
-            var $res = $(data).find('.card'); //从数据中挑出文章数据，请根据实际情况更改
-            $('.card-list').append($res.fadeIn(
-              500)); //将数据加载加进posts-loop的标签中。
-            var newhref = $(data).find('.btn-paginator').attr('href'); //找出新的下一页链接
-            if (newhref != undefined) {
-              $('.btn-paginator').attr('href', newhref);
-            } else {
-              $('.btn-paginator').remove(); //如果没有下一页了，隐藏
-            }
-          }
-        });
-      }
-      return false;
-    });
-  });
-</script>
-
-        	<div class="layout-footer">
-
-		<div class="container">
-			<div class="row justify-content-lg-center">
-				<div class="col-12 col-lg-9">
-					<div class="footer">
-						<div class="row">
-							<div class="col-12 col-md-9">
-								<div class="footer-copy">
-									
-									<span>© 2019.1.25 </span>
-									<a href="https://Qwdb.github.io" title="千文杜博的博客~">千文杜博的博客~</a>
-									<span class="px-2">⋅</span>
-									
-									本站基于<a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>搭建，强烈安利哦～
-									<div class="footer-icp d-none d-sm-inline-block">
-										<span class="px-2">⋅</span>
-										
-									</div>
-								</div>
-							</div>
-							<div class="col-sm-3 d-none d-md-block">
-								<div class="footer-links">
-									
-									
-									
-									
-									<span class="footer-links-item">
-										<a href="https://github.com/Qwdb" target="_blank">
-											<i class="fa fa-github" aria-hidden="true"></i>
-										</a>
-									</span>
-									
-									
-									
-									
-									
-									<span class="footer-links-item">
-										<a href="https://www.douban.com/people/214765067/" target="_blank">
-											<i class="fa fa-douban" aria-hidden="true"></i>
-										</a>
-									</span>
-									
-									
-									
-									
-									
-									<span class="footer-links-item">
-										<a href="https://user.qzone.qq.com/2239649275/main" target="_blank">
-											<i class="fa fa-qq" aria-hidden="true"></i>
-										</a>
-									</span>
-									
-									
-									
-									
-									
-									<span class="footer-links-item">
-										<a href="千文杜博" target="_blank">
-											<i class="fa fa-weixin" aria-hidden="true"></i>
-										</a>
-									</span>
-									
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
-	</div>
-
-	<script type="text/javascript" src='https://Qwdb.github.io/media/scripts/main.js'></script>
-	
-	<script>
-		var _hmt = _hmt || [];
-		(function () {
-			var hm = document.createElement("script");
-			hm.src = "https://hm.baidu.com/hm.js?32b244f072";
-			var s = document.getElementsByTagName("script")[0];
-			s.parentNode.insertBefore(hm, s);
-		})();
-	</script>
-	
-    </div>
+</div>
+            <div class="pagination-container">
+                
+                
+            </div>
+        </div>
+        <div id="landlord">
+            <div class="message" style="opacity:0"></div>
+            <canvas id="live2d" width="240" height="250" class="live2d"></canvas>
+        </div>
+        <div id="domainname" style="display:none">https://Qwdb.github.io</div>
 </body>
 
 </html>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.2.1/dist/jquery.min.js"></script>
+
+<script type="text/javascript">
+    var message_Path = '/live2d/'
+    var home_Path = document.getElementById("domainname").innerHTML + "/"; //此处修改为你的域名，必须带斜杠
+</script>
+<script type="text/javascript" src="https://Qwdb.github.io/media/live2d/js/live2d.js"></script>
+<script type="text/javascript" src="https://Qwdb.github.io/media/live2d/js/message.js"></script>
+<script type="text/javascript">
+    loadlive2d("live2d", "https://Qwdb.github.io/media/live2d/assets/tororo.model.json");
+</script>
+
+
+<script>
+        var bgchoice=$('#bgchoice').html();
+        var bg = $('#bg');
+        var bgurl = document.getElementById("bgurl").innerHTML;
+        if(bgchoice=='default')
+            for (var i = 0; i < 3; i++)
+                bgurl = bgurl.replace("\\", "/");
+        bg.css("background", "url('" + bgurl + "')");
+</script>
+
+<script src="https://Qwdb.github.io/media/js/index.js"></script>
