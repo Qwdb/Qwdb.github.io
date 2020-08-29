@@ -56,7 +56,7 @@
     
     <div id=side>
         <div class="avatar-border">
-            <img src="https://Qwdb.github.io/images/avatar.png?v=1598436734051" class="avatar">
+            <img src="https://Qwdb.github.io/images/avatar.png?v=1598691317221" class="avatar">
         </div>
         <div class="sitename">千文杜博的博客~</div>
         <span class="describtion" data-text='["并非所有流浪者，都迷失了自我！"]'>&nbsp;</span>
@@ -122,22 +122,6 @@
     <div class="mchocie describtion">
         <a href="https://qwdb.github.io/post/fz" class="mchocie describtion" target="_blank">
             分站
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a href="https://qwdb.github.io/books" class="mchocie describtion" target="_blank">
-            阅读
-        </a>
-    </div>
-    
-    
-    
-    <div class="mchocie describtion">
-        <a href="https://qwdb.github.io/movies" class="mchocie describtion" target="_blank">
-            观影
         </a>
     </div>
     
@@ -427,7 +411,7 @@
             
             <div class="postfooter">
                 <ul class="post-copyright">
-                    <li><strong>文章作者：</strong></li>
+                    <li><strong>文章作者：</strong>千文杜博</li>
             <li><strong>原文链接：</strong>https://Qwdb.github.io/post/gy/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
@@ -451,7 +435,53 @@
                 <div id="comment" style="background: white">
                     <div class="commentcontainer">
                         
-                        <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                        <style>
+    @media screen and (min-width: 1300px) {
+        .veditor::placeholder {
+            color: #b3b3b3;
+            font-size: 18px;
+            text-align: center;
+            line-height: 3rem;
+            font-family: kaiti;
+        }
+    }
+</style>
+
+<body>
+    <div id="vcomments">
+    </div>
+    <script src='https://Qwdb.github.io/media/js/valine.min.js'></script>
+    <script src="https://Qwdb.github.io/media/js/jquery.min.js"></script>
+    <script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+    <script>
+        new Valine({
+            el: '#vcomments',
+            appId: 'ia01VWYvuQymgmjhfVWp2sXI-gzGzoHsz',
+            appKey: 'JUha7UOwjgPcDzhy5aLrIqg9',
+            notify: true,
+            verify: false,
+            avatar: 'retro',
+            pageSize: 10,
+            placeholder: '既然来了，何不畅所欲言呢？',
+            visitor: true, // 阅读量统计
+        });
+    </script>
+    <script type="text/javascript">
+        // jinrishici.load(function (result) {
+        //     var jrsc_plac = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+        //         .dynasty + " · " + result.data.origin.author;
+        //     if (jrsc_plac != undefined)
+        //         document.getElementById("veditor").setAttribute("placeholder", jrsc_plac);
+        // 
+        var jrsc = '既然来了，何不畅所欲言呢？';
+        jinrishici.load(function (result) {
+                // 自己的处理逻辑
+                jrsc = result.data.content + "\n「" + result.data.origin.title + "」" + result.data.origin
+                 .dynasty + " · " + result.data.origin.author;
+            });
+    </script> 
+</body>
+                        <div class="clear"></div>
                         
                     </div>
                 </div>
@@ -469,7 +499,7 @@
     </div>
     <div id="bg">
     </div>
-    <div id="bgchoice" style="display: none"></div>
+    <div id="bgchoice" style="display: none">link</div>
     
     <div id="bgurl" style="display:none"></div>
     
@@ -541,18 +571,6 @@
           
           <li><a href="https://qwdb.github.io/post/fz" target="_blank">
               分站
-            </a></li>
-          
-          
-          
-          <li><a href="https://qwdb.github.io/books" target="_blank">
-              阅读
-            </a></li>
-          
-          
-          
-          <li><a href="https://qwdb.github.io/movies" target="_blank">
-              观影
             </a></li>
           
           
@@ -676,7 +694,7 @@
             
             <div class="postfooter">
                 <ul class="post-copyright">
-                    <li><strong>文章作者：</strong></li>
+                    <li><strong>文章作者：</strong>千文杜博</li>
             <li><strong>原文链接：</strong>https://Qwdb.github.io/post/gy/</li>
             <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用<i class="fa fa-fw fa-creative-commons"></i>BY-NC-SA
                 许可协议。转载请注明出处！</li>
@@ -699,7 +717,29 @@
         <div name="comment" style="background: white;margin-top:100px">
             <div class="commentcontainer">
                 
-                <p>请到客户端“主题--自定义配置--valine”中填入ID和KEY</p>
+                <body>
+    <div id="vcomments1"></div>
+
+<script src='https://Qwdb.github.io/media/js/valine.min.js'></script>
+<script src="https://Qwdb.github.io/media/js/jquery.min.js"></script>
+<script src="https://sdk.jinrishici.com/v2/browser/jinrishici.js" charset="utf-8"></script>
+<script>
+    new Valine({
+        el: '#vcomments1',
+        appId: 'ia01VWYvuQymgmjhfVWp2sXI-gzGzoHsz',
+        appKey: 'JUha7UOwjgPcDzhy5aLrIqg9',
+        notify: true,
+        verify: false,
+        avatar: 'retro',
+        pageSize: 10,
+        placeholder: '既然来了，那就留个痕迹吧~',
+        visitor: true // 阅读量统计
+    })
+</script>
+
+</body>
+
+                <div class="clear"></div>
                 
             </div>
         </div>
