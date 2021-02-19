@@ -2,14 +2,14 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://Qwdb.github.io</id>
     <title>千文杜博的博客~</title>
-    <updated>2020-10-23T08:59:55.970Z</updated>
+    <updated>2021-02-19T13:03:27.848Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://Qwdb.github.io"/>
     <link rel="self" href="https://Qwdb.github.io/atom.xml"/>
     <subtitle>并非所有流浪者，都迷失了自我！</subtitle>
     <logo>https://Qwdb.github.io/images/avatar.png</logo>
     <icon>https://Qwdb.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 千文杜博的博客~</rights>
+    <rights>All rights reserved 2021, 千文杜博的博客~</rights>
     <entry>
         <title type="html"><![CDATA[索引 | 算法索引]]></title>
         <id>https://Qwdb.github.io/post/tijiesuoyin/</id>
