@@ -2,7 +2,7 @@
   <head>
     <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>剧评 | 千文杜博的博客~</title>
+<title>题解 | P1219 [USACO1.5]八皇后 Checker Challenge | 千文杜博的博客~</title>
 <meta name="description" content="并非所有流浪者，都迷失了自我！" />
 <link rel="shortcut icon" href="https://Qwdb.github.io/favicon.ico">
 <link rel="stylesheet" href="https://Qwdb.github.io/styles/main.css">
@@ -14,11 +14,20 @@
 <script src="https://Qwdb.github.io/media/js/view-image.min.js"></script>
 <script src="https://Qwdb.github.io/media/js/jquery.magnific-popup.min.js"></script>
 <script src="https://Qwdb.github.io/media/js/functions.js"></script>
+    <meta name="referrer" content="never">
+    <meta name="description" content="P1219 [USACO1.5]八皇后 Checker Challenge 题解
+难度：⭐⭐
+知识点：DFS
+题目链接
+序言：
+题目说实话不难，一道黄题但是WA了2次，这道题对我还是有其探究的价值的。
+1. 入手程序
+经典的八皇后问题加上了..." />
+    <meta name="keywords" content="" />
+    <script src="https://Qwdb.github.io/media/js/waterfall.min.js"></script>
+    <script src="https://Qwdb.github.io/media/js/prism.min.js"></script>
   </head>
   <body>
-    <!-- start: #wrapper -->
-    <div class="wrapper">
-      
             <header id="header" class="grid-container">
         <!-- start: .menu-wrapper -->
         <div class="menu-mobile"> 
@@ -109,45 +118,233 @@
         </div>
       </div>
 
-      <main id="home" class="main fullcover no-sidebar content">
-        <div class="grid-container module-wrapper enable-masonry aos-init aos-animate" data-aos="fade-up">
-        <div class="epcl-page-wrapper">
-          <div class="left-content grid-70 np-mobile widget_epcl_related_articles">
-                
-            <!-- start: .articles -->
-            <div class="main-article post">
-  <h2 class="year"># 剧评</h2>
-    
-      <article class="item default grid-33 tablet-grid-50 np-mobile">
-        <a href="https://Qwdb.github.io/post/shibingtuji/" class="thumb hover-effect">
-          <span class="fullimage cover" style="display: block;background-image: url('https://i.loli.net/2020/05/02/gMh8InxZfAdjOzv.jpg');"></span>
-        </a>
-        <div class="info gradient-effect">
-          <time datetime="2020-05-02">2020-05-02</time>
-          <h4 class="title usmall">
-            <a href="https://Qwdb.github.io/post/shibingtuji/">剧评 |《士兵突击》</a>
-          </h4>
-        </div>
-      </article>
+      <main id="single" class="main grid-container fullcover no-sidebar aos-init aos-animate" data-aos="fade">
 
-    
-    <div class="clear"></div>
-</div>
-            <!-- end: .articles -->
-            
-                        <div class="epcl-pagination section">
-              <div class="nav">
-                
+        <div class="center content">
+          <div class="featured-image cover" style="background-image: url('https://i.loli.net/2021/07/22/Z8Dc9NpWUd62suQ.jpg');">
+            <div class="meta top"> 
+              <time class="meta-info" style="float:left;" datetime="2021-07-22"><i class="fa fa-calendar"></i><span class="lately">2 小时前</span></time>
+              
+              <a href="https://Qwdb.github.io/post/ghh/#comments" class="comments meta-info" title="">
+                <i class="fa fa-comment remixicon"></i><span class="comment-count valine-comment-count" data-xid="/ghh/"> </span>
+              </a>
+              <span id="/ghh/" class="leancloud_visitors views-counter meta-info" title=""><i class="fa fa-leancloud remixicon"></i><span class="leancloud-visitors-count"></span></span>
+              
+            </div>
+            <div class="info">
+              <div class="tags ">
                 
               </div>
+              <h1 class="title ularge white bold">题解 | P1219 [USACO1.5]八皇后 Checker Challenge</h1>
             </div>
+          </div>
+        </div>  
+
+        <div class="epcl-page-wrapper">
+          <div class="left-content grid-70 np-mobile">
+            <article class="main-article post">
+              <section class="post-content">
+                <div class="text">
+                  <h2 id="p1219-usaco15八皇后-checker-challenge-题解">P1219 [USACO1.5]八皇后 Checker Challenge 题解</h2>
+<p>难度：⭐⭐<br>
+知识点：DFS<br>
+<a href="https://www.luogu.com.cn/problem/P1219">题目链接</a></p>
+<p>序言：</p>
+<p><em>题目说实话不难，一道黄题但是WA了2次，这道题对我还是有其探究的价值的。</em></p>
+<h3 id="1-入手程序">1. 入手程序</h3>
+<p>经典的八皇后问题加上了对角线的限制，其基本的深度优先搜索思想不变，其关键点主要是book数组的改变，用一个函数**bj()**来单独处理，观察对于任意一点进行选择，不能选择的点有：<br>
+<img src="https://i.loli.net/2021/07/22/1ZkWajMULtqETAX.png" alt="图1" loading="lazy"><br>
+对此，我们将book数组扩展为两个，book1[i][j]负责标记选定点[i][j]后不能选择的点中的对角线部分，book2负责横排和竖排。<br>
+再来设计DFS的逻辑，这里采用的是对于每一个横排进行搜索，竖排同理。<br>
+同时我们还能将book2[i][j]优化为book2[i]:由于是对一横排进行整体处理，所以可以规避掉横排重复的情况。<br>
+至此，代码基本结构已经清晰。<br>
+初版代码如下：</p>
+<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,ans;
+bool book[15][15];
+int zf[15];
+bool book2[15];
+void bj(int x,int y,bool b)
+{
+	for(int i=x,j=y;i&lt;=n &amp;&amp; j&gt;=1;i++,j--)
+		book[i][j]=b;
+	for(int i=x,j=y;i&lt;=n &amp;&amp; j&lt;=n;i++,j++)
+		book[i][j]=b;
+	for(int i=x,j=y;i&gt;=1 &amp;&amp; j&gt;=1;i--,j--)
+		book[i][j]=b;
+	for(int i=x,j=y;i&gt;=1 &amp;&amp; j&lt;=n;i--,j++)
+		book[i][j]=b;
+	return;
+}
+void dfs(int h)
+{
+	if(h==n+1)
+	{
+		ans++;
+		if(ans&lt;=3)
+		{
+			for(int i=1;i&lt;=n;i++)
+				printf(&quot;%d &quot;,zf[i]);
+			printf(&quot;\n&quot;);
+		}
+		return;
+	}
+	for(int i=1;i&lt;=n;i++)
+		if(book[h][i]==0 &amp;&amp; book2[i]==0)
+		{
+			bj(h,i,1);
+			zf[h]=i;
+			book2[i]=1;
+			dfs(h+1);
+			book2[i]=0;
+			bj(h,i,0);
+		}
+	return;
+}
+int main()
+{
+	scanf(&quot;%d&quot;,&amp;n);
+	dfs(1);
+	printf(&quot;%d&quot;,ans); 
+	return 0;
+}
+</code></pre>
+<h2 id="2编程思路">2.编程思路</h2>
+<p>测试样例我们便可以发现问题，程序输出的结果远大于实际。<br>
+在手动模拟后，我们可以发现原因所在，如下图（样例数据）时：<br>
+<img src="https://i.loli.net/2021/07/22/pbIfMS1dBgr2VhC.png" alt="图2" loading="lazy"><br>
+程序发现无法选出最后一个点，回溯，在回溯前清空了标记：<br>
+<img src="https://i.loli.net/2021/07/22/HLUjI9W8iz4wP6K.png" alt="图3" loading="lazy"><br>
+然而这也同时覆盖了其他选点所导致的不能选的点<br>
+我们要修改bj()函数，改为：</p>
+<pre><code class="language-c">void bj(int x,int y,int b)
+{
+	for(int i=x,j=y;i&lt;=n &amp;&amp; j&gt;=1;i++,j--)
+		book[i][j]+=b;
+	for(int i=x,j=y;i&lt;=n &amp;&amp; j&lt;=n;i++,j++)
+		book[i][j]+=b;
+	for(int i=x,j=y;i&gt;=1 &amp;&amp; j&gt;=1;i--,j--)
+		book[i][j]+=b;
+	for(int i=x,j=y;i&gt;=1 &amp;&amp; j&lt;=n;i--,j++)
+		book[i][j]+=b;
+	return;
+}
+</code></pre>
+<p>在打标记时b参数传入1，清除时传入0<br>
+这样就解决啦~</p>
+<p>###3.代码实现</p>
+<pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+int n,ans;
+int book[15][15];
+int zf[15];
+bool book2[15];
+void bj(int x,int y,int b)
+{
+	for(int i=x,j=y;i&lt;=n &amp;&amp; j&gt;=1;i++,j--)
+		book[i][j]+=b;
+	for(int i=x,j=y;i&lt;=n &amp;&amp; j&lt;=n;i++,j++)
+		book[i][j]+=b;
+	for(int i=x,j=y;i&gt;=1 &amp;&amp; j&gt;=1;i--,j--)
+		book[i][j]+=b;
+	for(int i=x,j=y;i&gt;=1 &amp;&amp; j&lt;=n;i--,j++)
+		book[i][j]+=b;
+	return;
+}
+void dfs(int h)
+{
+	if(h==n+1)
+	{
+		ans++;
+		if(ans&lt;=3)
+		{
+			for(int i=1;i&lt;=n;i++)
+				printf(&quot;%d &quot;,zf[i]);
+			printf(&quot;\n&quot;);
+		}
+		return;
+	}
+	for(int i=1;i&lt;=n;i++)
+		if(book[h][i]==0 &amp;&amp; book2[i]==0)
+		{
+			bj(h,i,1);
+			zf[h]=i;
+			book2[i]=1;
+			dfs(h+1);
+			book2[i]=0;
+			bj(h,i,-1);
+		}
+	return;
+}
+int main()
+{
+	scanf(&quot;%d&quot;,&amp;n);
+	dfs(1);
+	printf(&quot;%d&quot;,ans); 
+	return 0;
+}
+</code></pre>
+<h3 id="我是千文杜博记住我呦~~">我是千文杜博，记住我呦~~</h3>
+<h4 id="the-end">The end</h4>
+
+                </div>
+                <div class="clear"></div>
+              </section>
+            </article>
+            <div class="clear"></div>
+
+            <section class="related section">
+              
+              
+              <article class="next grid-50 tablet-grid-50 grid-parent">
+                <div class="thumb cover lazy loaded" style="background-image: url('https://i.loli.net/2021/02/25/FU6XqvztyWOZfoa.jpg');"></div>
+                 <a href="https://Qwdb.github.io/post/nhlhy/" class="full-link"></a>
+                 <div class="info">
+                  <time datetime="2021-02-19">2021-02-19</time>
+                  <h4 class="title white no-margin">影评 | 《你好，李焕英》</h4>
+                </div>
+                 <span class="epcl-button red">
+                  <img src="https://Qwdb.github.io/media/images/right-arrow.svg" width="15" alt="Left Arrow">
+                </span>
+                <div class="overlay"></div>
+              </article>
+              
+
+                <div class="clear"></div>
+            </section>
+
+              <div class="clear"></div>
+              
             
+              <div id="comments" class="bg-white hosted ">
+                <div class="clear"></div>
+<script>
+jQuery(document).ready(function($){
+    $('.vemoji-btn').text('😀');
+    $("#comments").on('click', 'span.vat',function(){
+        $(this).parent('div.vmeta').next("div.vcontent").after($("div.vwrap"));
+        $('textarea#veditor').focus();
+    })
+    if(window.location.hash){
+        var checkExist = setInterval(function() {
+            if ($(window.location.hash).length) {
+                $('html, body').animate({scrollTop: $(window.location.hash).offset().top-200}, 600);
+                clearInterval(checkExist);
+            }
+        }, 100);
+    }
+})
+</script>
+
+              </div>
+            
+
+            </div>
           </div>
-          </div>
-        </div>
       </main>
 
-        <footer id="footer" class="grid-container">
+          <footer id="footer" class="grid-container">
         <div class="widgets row gradient-effect">
             <div class="default-sidebar border-effect">
               <div class="grid-33 tablet-grid-50 mobile-grid-100">
@@ -332,6 +529,9 @@
     })
 </script>
     
+
+      
+    <script src="https://Qwdb.github.io/media/js/functions-post.js"></script>
 
     </div>
     <!-- end: #wrapper -->
