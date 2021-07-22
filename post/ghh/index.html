@@ -108,7 +108,7 @@
       <div class="hide-on-mobile hide-on-tablet hide-on-desktop">
         <div id="search-lightbox" class="grid-container grid-small grid-parent mfp-hide">
           <div class="search-wrapper section">
-            <form id="gridea-search-form" data-update="1626950421659" action="/search/index.html" class="search-form" _lpchecked="1">
+            <form id="gridea-search-form" data-update="1626950519818" action="/search/index.html" class="search-form" _lpchecked="1">
               <input type="text" name="q" id="s" value="" class="search-field" placeholder="搜点啥..." aria-label="搜点啥..." required="">
               <button type="submit" class="submit" aria-label="Submit">
                 <i class="fa fa-search-line"></i>
@@ -151,8 +151,8 @@
 <a href="https://www.luogu.com.cn/problem/P1219">题目链接</a></p>
 <p>序言：</p>
 <p><em>题目说实话不难，一道黄题但是WA了2次，这道题对我还是有其探究的价值的。</em></p>
-<h3 id="1-入手程序">1. 入手程序</h3>
-<p>经典的八皇后问题加上了对角线的限制，其基本的深度优先搜索思想不变，其关键点主要是book数组的改变，用一个函数**bj()**来单独处理，观察对于任意一点进行选择，不能选择的点有：<br>
+<h2 id="1-入手程序">1. 入手程序</h2>
+<p>经典的八皇后问题加上了对角线的限制，其基本的深度优先搜索思想不变，其关键点主要是book数组的改变，用一个函数 <strong>bj()</strong> 来单独处理，观察对于任意一点进行选择，不能选择的点有：<br>
 <img src="https://i.loli.net/2021/07/22/1ZkWajMULtqETAX.png" alt="图1" loading="lazy"><br>
 对此，我们将book数组扩展为两个，book1[i][j]负责标记选定点[i][j]后不能选择的点中的对角线部分，book2负责横排和竖排。<br>
 再来设计DFS的逻辑，这里采用的是对于每一个横排进行搜索，竖排同理。<br>
@@ -233,7 +233,7 @@ int main()
 </code></pre>
 <p>在打标记时b参数传入1，清除时传入0<br>
 这样就解决啦~</p>
-<p>###3.代码实现</p>
+<h2 id="3代码实现">3.代码实现</h2>
 <pre><code class="language-c">#include&lt;bits/stdc++.h&gt;
 using namespace std;
 int n,ans;
